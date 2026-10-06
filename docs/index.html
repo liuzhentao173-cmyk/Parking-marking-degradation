@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recover-then-Measure · Interactive demo</title>
+<meta name="description" content="Hover a parking bay to see its original marking footprint M, its residual paint R, the degradation index D and the maintenance grade.">
+<link rel="preload" href="assets/topdown_rgb.webp" as="image">
+<style>
+:root{
+  --bg:#0c0f14; --panel:#141920; --panel2:#1a2029; --line:#27303b; --text:#e8eef4; --muted:#8c99a6;
+  --accent:#4cc2ff; --m:#2ee6e6; --r:#ffd34d;
+  --g1:#3fb950; --g2:#f0a33a; --g3:#f85149; --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans CJK SC","Noto Sans KR",sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px 40px}
+
+.hero{position:relative;border-radius:0 0 var(--radius) var(--radius);overflow:hidden;margin:0 -16px 18px;background:#000;height:clamp(300px,37.5vw,480px)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0c0f1400 30%,#0c0f14 98%)}
+.hero .in{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between}
+.hero h1{margin:0;font-size:clamp(24px,3.4vw,40px);letter-spacing:.2px;line-height:1.1}
+.hero p{margin:6px 0 0;color:#c7d2dc;max-width:720px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#dff;background:#ffffff1a;border:1px solid #ffffff2a;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.langs{display:flex;gap:4px;max-width:100%;overflow-x:auto;scrollbar-width:none;background:#0c0f14cc;border:1px solid var(--line);border-radius:999px;padding:4px;backdrop-filter:blur(6px)}
+.langs button{all:unset;flex:none;cursor:pointer;padding:5px 11px;border-radius:999px;font-size:13px;color:var(--muted)}
+.langs button[aria-pressed="true"]{background:var(--accent);color:#04121c;font-weight:600}
+
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}
+@media (max-width:1000px){.grid{grid-template-columns:1fr}}
+.stage{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.view{position:relative;line-height:0}
+.view canvas{width:100%;height:auto;display:block}
+#ov{position:absolute;inset:0;cursor:crosshair;touch-action:none}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;line-height:1.4}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;border-top:1px solid var(--line);background:var(--panel2)}
+.toolbar .sp{flex:1}
+.chip{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;background:var(--panel)}
+.chip[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.chip:focus-visible,.langs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.tip{position:absolute;pointer-events:none;background:#0b0f14ee;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:13px;line-height:1.4;white-space:nowrap;transform:translate(14px,14px);display:none;z-index:3}
+
+aside{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.card h2{margin:0 0 10px;font-size:12px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.trip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}
+.trip figure{margin:0}
+.trip canvas{width:100%;height:auto;background:#000;border-radius:8px;border:1px solid var(--line);display:block;image-rendering:pixelated}
+.trip figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:3px}
+.big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.big .val{font-size:42px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.big .unit{color:var(--muted);font-size:14px}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:5px 12px;border-radius:999px;font-weight:700;font-size:14px;color:#0b0f14}
+.action{display:inline-block;margin-left:8px;color:var(--muted);font-size:14px}
+.bar{position:relative;height:10px;border-radius:6px;margin:14px 0 4px;background:linear-gradient(90deg,var(--g1) 0 23%,var(--g2) 23% 40%,var(--g3) 40% 100%)}
+.bar i{position:absolute;top:-4px;width:3px;height:18px;background:#fff;border-radius:2px;box-shadow:0 0 0 2px #0008;transition:left .2s}
+.ticks{position:relative;height:14px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ticks span{position:absolute;transform:translateX(-50%)} .ticks span:first-child{transform:none} .ticks span:last-child{transform:translateX(-100%)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;margin:12px 0 0;font-size:14px}
+dt{color:var(--muted)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:#cfe3f3}
+.empty{color:var(--muted);font-size:14px;margin:0}
+.dist{display:flex;height:12px;border-radius:6px;overflow:hidden;margin-top:10px}
+.note{color:var(--muted);font-size:13px;margin-top:14px}
+footer{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <video autoplay muted loop playsinline preload="auto" poster="assets/aerial_overview.jpg" aria-hidden="true">
+      <source src="assets/parking_flyover.mp4" type="video/mp4">
+    </video>
+    <div class="in">
+      <div>
+        <span class="tag" data-i18n="tag">Blender synthetic scene</span>
+        <h1 data-i18n="title">Recover-then-Measure</h1>
+        <p data-i18n="subtitle">Hover a parking bay: the original marking footprint is recovered, the paint that remains is measured, and the bay is graded for maintenance.</p>
+      </div>
+      <nav class="langs" aria-label="Language" id="langs"></nav>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section>
+      <div class="stage">
+        <div class="view">
+          <canvas id="base" width="2048" height="1536" aria-label="Top-down view of a synthetic parking lot"></canvas>
+          <canvas id="ov" width="2048" height="1536"></canvas>
+          <div class="loading" id="loading">Loading…</div>
+          <div class="tip" id="tip"></div>
+        </div>
+        <div class="toolbar">
+          <button class="chip" id="btnAll" aria-pressed="false" data-i18n="showAll">Show all overlays</button>
+          <button class="chip" id="btnGrade" aria-pressed="false" data-i18n="gradeMap">Grade map</button>
+          <span class="sp"></span>
+          <div class="legend">
+            <span><i class="sw" style="background:var(--m)"></i><span data-i18n="legM">Original footprint M</span></span>
+            <span><i class="sw" style="background:var(--r)"></i><span data-i18n="legR">Residual paint R</span></span>
+          </div>
+        </div>
+      </div>
+      <p class="note" data-i18n="note">Rendered in Blender: no survey imagery is used. M and R come from the scene geometry and paint material, so the values here are a synthetic reference, not model predictions. Each value is computed over one complete bay outline.</p>
+    </section>
+
+    <aside>
+      <div class="card">
+        <h2 data-i18n="selected">Selected bay</h2>
+        <div id="sel"><p class="empty" data-i18n="hint">Move the pointer over a parking bay (or tap it).</p></div>
+      </div>
+      <div class="card">
+        <h2 data-i18n="howTitle">How D is measured</h2>
+        <div class="formula">D = 1 − |R ∩ M| / |M|</div>
+        <p class="empty" style="margin-top:10px" data-i18n="how">Stage 1 recovers the original footprint M, including segments that have worn away; Stage 2 finds the paint R still visible inside it. D is the share of the footprint that has lost its paint.</p>
+      </div>
+      <div class="card">
+        <h2 data-i18n="sceneTitle">Whole scene</h2>
+        <div class="big"><span class="val" id="sceneD">–</span><span class="unit" data-i18n="areaWeighted">area-weighted D</span></div>
+        <div class="dist" id="dist"></div>
+        <dl id="sceneDl"></dl>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <span data-i18n="paper">Paper: Recover-then-Measure (Measurement).</span>
+    <a href="https://github.com/liuzhentao173-cmyk/Quantitative-assessment-of-parking-lot-pavement-marking-degradation" data-i18n="code">Code on GitHub</a>
+    <a href="https://doi.org/10.5281/zenodo.20825454" data-i18n="weights">Model weights on Zenodo</a>
+  </footer>
+</div>
+
+<script>
+"use strict";
+const I18N = {
+ en:{name:"English",tag:"Blender synthetic scene",title:"Recover-then-Measure",
+  subtitle:"Hover a parking bay: the original marking footprint is recovered, the paint that remains is measured, and the bay is graded for maintenance.",
+  showAll:"Show all overlays",gradeMap:"Grade map",legM:"Original footprint M",legR:"Residual paint R",
+  note:"Rendered in Blender: no survey imagery is used. M and R come from the scene geometry and paint material, so the values here are a synthetic reference, not model predictions. Each value is computed over one complete bay outline.",
+  selected:"Selected bay",hint:"Move the pointer over a parking bay (or tap it).",howTitle:"How D is measured",
+  how:"Stage 1 recovers the original footprint M, including segments that have worn away; Stage 2 finds the paint R still visible inside it. D is the share of the footprint that has lost its paint.",
+  sceneTitle:"Whole scene",areaWeighted:"area-weighted D",paper:"Paper: Recover-then-Measure (Measurement).",code:"Code on GitHub",weights:"Model weights on Zenodo",
+  bay:"Bay",wear:"degradation index",coverage:"Residual coverage Q",footprint:"Footprint |M|",residual:"Residual |R ∩ M|",rank:"Handbook rank",
+  rgb:"RGB",grades:["Grade I","Grade II","Grade III"],actions:["Routine inspection","Schedule repainting","Repaint with priority"],bays:"Bays",loading:"Loading…"},
+ zh:{name:"中文",tag:"Blender 合成场景",title:"先恢复，再测量",
+  subtitle:"鼠标划过车位：恢复标线的原始区域，测量仍然残留的漆料，并给出维护等级。",
+  showAll:"显示全部叠加",gradeMap:"等级地图",legM:"原始标线区域 M",legR:"残留漆料 R",
+  note:"本场景由 Blender 渲染，不含任何实测影像。M 和 R 来自场景几何与漆料材质，因此这里的数值是合成参考值，并非模型预测。每个数值按一个完整车位轮廓计算。",
+  selected:"当前车位",hint:"将鼠标移到任意车位上（触屏可点按）。",howTitle:"D 的计算方式",
+  how:"第一阶段恢复标线的原始区域 M（包括已磨掉的部分）；第二阶段找出其中仍可见的漆料 R。D 即原始区域中漆料已脱落的比例。",
+  sceneTitle:"整个场景",areaWeighted:"面积加权 D",paper:"论文：Recover-then-Measure（Measurement 期刊）。",code:"GitHub 代码",weights:"Zenodo 模型权重",
+  bay:"车位",wear:"退化指数",coverage:"残留覆盖率 Q",footprint:"原始区域 |M|",residual:"残留 |R ∩ M|",rank:"手册等级",
+  rgb:"RGB",grades:["I 级","II 级","III 级"],actions:["常规巡检","安排重涂","优先重涂"],bays:"车位数",loading:"加载中…"},
+ ja:{name:"日本語",tag:"Blender 合成シーン",title:"復元してから測る",
+  subtitle:"駐車枠にカーソルを合わせると、区画線の元の範囲を復元し、残っている塗料を測定して、維持管理グレードを判定します。",
+  showAll:"すべて重ねて表示",gradeMap:"等級マップ",legM:"元の区画線範囲 M",legR:"残存塗料 R",
+  note:"Blender でレンダリングしたシーンで、実測画像は使用していません。M と R はシーンの形状と塗料マテリアルから得たもので、値は合成上の参照値であり、モデルの予測ではありません。値は駐車枠 1 区画の区画線全体で計算しています。",
+  selected:"選択中の駐車枠",hint:"駐車枠の上にカーソルを移動してください（タッチ操作ではタップ）。",howTitle:"D の算出方法",
+  how:"第1段階で摩耗で消えた部分を含む元の範囲 M を復元し、第2段階でその内側に残る塗料 R を抽出します。D は元の範囲のうち塗料が失われた割合（剥離率）です。",
+  sceneTitle:"シーン全体",areaWeighted:"面積加重 D",paper:"論文：Recover-then-Measure（Measurement 誌）",code:"GitHub のコード",weights:"Zenodo のモデル重み",
+  bay:"駐車枠",wear:"劣化指標",coverage:"残存被覆率 Q",footprint:"元の範囲 |M|",residual:"残存 |R ∩ M|",rank:"ハンドブック評価",
+  rgb:"RGB",grades:["グレード I","グレード II","グレード III"],actions:["通常点検","再塗装を計画","優先して再塗装"],bays:"駐車枠数",loading:"読み込み中…"},
+ ko:{name:"한국어",tag:"Blender 합성 장면",title:"복원한 뒤 측정한다",
+  subtitle:"주차 구획 위에 마우스를 올리면 표시의 원래 영역을 복원하고, 남아 있는 도료를 측정해 유지관리 등급을 판정합니다.",
+  showAll:"모두 겹쳐 보기",gradeMap:"등급 지도",legM:"원래 표시 영역 M",legR:"잔존 도료 R",
+  note:"Blender로 렌더링한 장면이며 실제 촬영 영상은 사용하지 않았습니다. M과 R은 장면의 형상과 도료 재질에서 얻은 것으로, 값은 합성 참고값이며 모델 예측이 아닙니다. 값은 주차 구획 하나의 전체 윤곽선으로 계산합니다.",
+  selected:"선택한 구획",hint:"주차 구획 위로 마우스를 옮기세요(터치 화면에서는 탭).",howTitle:"D 계산 방법",
+  how:"1단계에서 마모로 사라진 부분까지 포함한 원래 영역 M을 복원하고, 2단계에서 그 안에 남은 도료 R을 찾습니다. D는 원래 영역 중 도료가 사라진 비율입니다.",
+  sceneTitle:"전체 장면",areaWeighted:"면적 가중 D",paper:"논문: Recover-then-Measure (Measurement)",code:"GitHub 코드",weights:"Zenodo 모델 가중치",
+  bay:"구획",wear:"열화 지수",coverage:"잔존 피복률 Q",footprint:"원래 영역 |M|",residual:"잔존 |R ∩ M|",rank:"핸드북 등급",
+  rgb:"RGB",grades:["I 등급","II 등급","III 등급"],actions:["정기 점검","재도장 계획","우선 재도장"],bays:"구획 수",loading:"불러오는 중…"},
+ de:{name:"Deutsch",tag:"Synthetische Blender-Szene",title:"Erst rekonstruieren, dann messen",
+  subtitle:"Fahren Sie über einen Stellplatz: Die ursprüngliche Markierungsfläche wird rekonstruiert, die verbliebene Farbe gemessen und der Stellplatz für die Instandhaltung eingestuft.",
+  showAll:"Alle Überlagerungen",gradeMap:"Klassenkarte",legM:"Ursprüngliche Fläche M",legR:"Verbliebene Farbe R",
+  note:"In Blender gerendert; es werden keine Befliegungsbilder verwendet. M und R stammen aus Geometrie und Farbmaterial der Szene; die Werte sind synthetische Referenzwerte, keine Modellvorhersagen. Jeder Wert bezieht sich auf die vollständige Umrandung eines Stellplatzes.",
+  selected:"Ausgewählter Stellplatz",hint:"Bewegen Sie den Zeiger über einen Stellplatz (oder tippen Sie darauf).",howTitle:"So wird D gemessen",
+  how:"Stufe 1 rekonstruiert die ursprüngliche Fläche M einschließlich abgefahrener Abschnitte; Stufe 2 findet die darin noch sichtbare Farbe R. D ist der Anteil der Fläche, der seine Farbe verloren hat.",
+  sceneTitle:"Gesamte Szene",areaWeighted:"flächengewichtetes D",paper:"Artikel: Recover-then-Measure (Measurement).",code:"Code auf GitHub",weights:"Modellgewichte auf Zenodo",
+  bay:"Stellplatz",wear:"Degradationsindex",coverage:"Restdeckung Q",footprint:"Fläche |M|",residual:"Rest |R ∩ M|",rank:"Handbuch-Rang",
+  rgb:"RGB",grades:["Klasse I","Klasse II","Klasse III"],actions:["Routinekontrolle","Neumarkierung einplanen","Vorrangig neu markieren"],bays:"Stellplätze",loading:"Wird geladen…"},
+ fr:{name:"Français",tag:"Scène de synthèse Blender",title:"Reconstituer, puis mesurer",
+  subtitle:"Survolez une place : l’emprise d’origine du marquage est reconstituée, la peinture restante est mesurée et la place reçoit une classe d’entretien.",
+  showAll:"Tout superposer",gradeMap:"Carte des classes",legM:"Emprise d’origine M",legR:"Peinture résiduelle R",
+  note:"Rendu dans Blender : aucune image de relevé n’est utilisée. M et R proviennent de la géométrie et du matériau de peinture de la scène ; les valeurs sont des références de synthèse, pas des prédictions du modèle. Chaque valeur porte sur le contour complet d’une place.",
+  selected:"Place sélectionnée",hint:"Placez le pointeur sur une place (ou touchez-la).",howTitle:"Calcul de D",
+  how:"L’étape 1 reconstitue l’emprise d’origine M, y compris les parties effacées ; l’étape 2 détecte la peinture R encore visible à l’intérieur. D est la part de l’emprise qui a perdu sa peinture.",
+  sceneTitle:"Scène entière",areaWeighted:"D pondéré par la surface",paper:"Article : Recover-then-Measure (Measurement).",code:"Code sur GitHub",weights:"Poids du modèle sur Zenodo",
+  bay:"Place",wear:"indice de dégradation",coverage:"Couverture résiduelle Q",footprint:"Emprise |M|",residual:"Résiduel |R ∩ M|",rank:"Rang (manuel)",
+  rgb:"RGB",grades:["Classe I","Classe II","Classe III"],actions:["Inspection courante","Prévoir un remarquage","Remarquer en priorité"],bays:"Places",loading:"Chargement…"}
+};
+const LANGS = ["en","zh","ja","ko","de","fr"];
+let lang = "en";
+function pickLang(){
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && I18N[q]) return q;
+  const nl = (navigator.language||"en").toLowerCase();
+  for (const l of LANGS) if (nl.startsWith(l)) return l;
+  return "en";
+}
+function applyLang(l){
+  lang = l; const t = I18N[l];
+  document.documentElement.lang = l === "zh" ? "zh-CN" : l;
+  document.querySelectorAll("[data-i18n]").forEach(el => { if (t[el.dataset.i18n]) el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll("#langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
+  const ld = document.getElementById("loading"); if (ld) ld.textContent = t.loading;
+  renderScene(); renderSelected(hover);
+}
+const langNav = document.getElementById("langs");
+LANGS.forEach(l => { const b = document.createElement("button"); b.textContent = I18N[l].name; b.dataset.l = l;
+  b.onclick = () => { applyLang(l); history.replaceState(null, "", "?lang=" + l); }; langNav.appendChild(b); });
+
+/* --------------------------------------------------------------- state */
+const GRADE_COLORS = ["#3fb950","#f0a33a","#f85149"];
+const HB_EDGES = [0.03,0.08,0.23,0.40], HB = ["5","4","3","2","1"];
+const gradeIdx = d => d < 0.23 ? 0 : d < 0.40 ? 1 : 2;
+const rankOf = d => { let i = 0; while (i < 4 && d >= HB_EDGES[i]) i++; return HB[i]; };
+const M_RGBA = [46,230,230,235], R_RGBA = [255,211,77,255];
+let W = 2048, H = 1536, regions = [], ids, Mm, Rm, rgbData;
+let hover = -1, showAll = false, gradeMap = false, fullAll = null, fullGrade = null;
+const base = document.getElementById("base"), ov = document.getElementById("ov");
+const bctx = base.getContext("2d", {willReadFrequently:true}), octx = ov.getContext("2d");
+
+async function loadImage(src){
+  const blob = await (await fetch(src)).blob();
+  return createImageBitmap(blob, {colorSpaceConversion:"none", premultiplyAlpha:"none"});
+}
+function pixels(bmp){
+  const c = document.createElement("canvas"); c.width = bmp.width; c.height = bmp.height;
+  const x = c.getContext("2d", {willReadFrequently:true}); x.drawImage(bmp, 0, 0);
+  return x.getImageData(0, 0, bmp.width, bmp.height).data;
+}
+function blendInto(dst, i, rgba){ const a = rgba[3]/255; for (let c = 0; c < 3; c++) dst[i+c] = dst[i+c]*(1-a) + rgba[c]*a; dst[i+3] = 255; }
+
+async function init(){
+  const [json, rgb, m, r, id] = await Promise.all([
+    fetch("assets/regions.json").then(x => x.json()),
+    loadImage("assets/topdown_rgb.webp"), loadImage("assets/mask_original_M.png"),
+    loadImage("assets/mask_remaining_R.png"), loadImage("assets/mask_bay_ids.png")]);
+  regions = json.regions; W = json.image_width; H = json.image_height;
+  base.width = ov.width = W; base.height = ov.height = H;
+  bctx.drawImage(rgb, 0, 0);
+  rgbData = bctx.getImageData(0, 0, W, H).data;
+  const md = pixels(m), rd = pixels(r), idd = pixels(id);
+  Mm = new Uint8Array(W*H); Rm = new Uint8Array(W*H); ids = new Uint8Array(W*H);
+  for (let k = 0, i = 0; k < W*H; k++, i += 4){ Mm[k] = md[i] > 127; Rm[k] = rd[i] > 127 && Mm[k]; ids[k] = idd[i]; }
+  // full-scene layers, composited over the base once so they can be drawn with putImageData
+  fullAll = new ImageData(new Uint8ClampedArray(rgbData), W, H);
+  fullGrade = new ImageData(new Uint8ClampedArray(rgbData), W, H);
+  const gcol = GRADE_COLORS.map(h => [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16), 240]);
+  const gradeOfId = new Map(regions.map(g => [g.bay_id, gradeIdx(g.degradation_D)]));
+  for (let k = 0, i = 0; k < W*H; k++, i += 4){
+    if (!Mm[k]) continue;
+    blendInto(fullAll.data, i, Rm[k] ? R_RGBA : M_RGBA);
+    const gi = gradeOfId.get(ids[k]); if (gi !== undefined) blendInto(fullGrade.data, i, gcol[gi]);
+  }
+  document.getElementById("loading").remove();
+  renderScene(); draw();
+}
+
+/* -------------------------------------------------------------- render */
+function bayAt(x, y){
+  for (let i = 0; i < regions.length; i++){ const [x0,y0,x1,y1] = regions[i].bbox_xyxy;
+    if (x >= x0 && x < x1 && y >= y0 && y < y1) return i; }
+  return -1;
+}
+function draw(){
+  octx.clearRect(0, 0, W, H);
+  if (gradeMap) octx.putImageData(fullGrade, 0, 0);
+  else if (showAll) octx.putImageData(fullAll, 0, 0);
+  if (hover === -1) return;
+  const g = regions[hover], [x0,y0,x1,y1] = g.bbox_xyxy, w = x1-x0, h = y1-y0;
+  octx.save(); octx.fillStyle = "rgba(6,9,13,.5)"; octx.beginPath();
+  octx.rect(0,0,W,H); octx.rect(x0-8,y0-8,w+16,h+16); octx.fill("evenodd"); octx.restore();
+  const patch = new ImageData(w, h);
+  for (let y = 0; y < h; y++){
+    const s = ((y0+y)*W + x0)*4; patch.data.set(rgbData.subarray(s, s + w*4), y*w*4);
+    for (let x = 0; x < w; x++){ const k = (y0+y)*W + x0 + x; if (Mm[k] && ids[k] === g.bay_id) blendInto(patch.data, (y*w+x)*4, Rm[k] ? R_RGBA : M_RGBA); }
+  }
+  octx.putImageData(patch, x0, y0);
+  octx.save(); octx.strokeStyle = GRADE_COLORS[gradeIdx(g.degradation_D)]; octx.lineWidth = 3; octx.setLineDash([10,7]);
+  octx.strokeRect(x0-8.5, y0-8.5, w+17, h+17); octx.restore();
+}
+
+function crop(canvas, g, mode){
+  const [x0,y0,x1,y1] = g.bbox_xyxy, w = x1-x0, h = y1-y0;
+  canvas.width = w; canvas.height = h;
+  const c = canvas.getContext("2d"), img = c.createImageData(w, h);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++){
+    const k = (y0+y)*W + (x0+x), i = (y*w + x)*4, s = k*4;
+    let r = rgbData[s], gg = rgbData[s+1], b = rgbData[s+2];
+    const mine = Mm[k] && ids[k] === g.bay_id;
+    if (mode !== "RGB"){ r *= .3; gg *= .3; b *= .3; }
+    if (mode === "M" && mine){ [r, gg, b] = M_RGBA; }
+    if (mode === "R" && mine){ [r, gg, b] = Rm[k] ? R_RGBA : [64,78,90]; }
+    img.data[i] = r; img.data[i+1] = gg; img.data[i+2] = b; img.data[i+3] = 255;
+  }
+  c.putImageData(img, 0, 0);
+}
+
+const fmt = (v, n = 3) => v.toFixed(n);
+const pad2 = n => String(n).padStart(2, "0");
+function renderSelected(i){
+  const t = I18N[lang], box = document.getElementById("sel");
+  if (i === -1 || !regions.length){ box.innerHTML = `<p class="empty">${t.hint}</p>`; return; }
+  const g = regions[i], d = g.degradation_D, gi = gradeIdx(d);
+  box.innerHTML = `
+    <div class="trip">
+      <figure><canvas id="cRGB"></canvas><figcaption>${t.rgb}</figcaption></figure>
+      <figure><canvas id="cM"></canvas><figcaption>M</figcaption></figure>
+      <figure><canvas id="cR"></canvas><figcaption>R</figcaption></figure>
+    </div>
+    <div style="color:var(--muted);font-size:13px;margin-bottom:4px">${t.bay} ${pad2(g.bay_id)}</div>
+    <div class="big"><span class="val">${fmt(d)}</span><span class="unit">D · ${t.wear}</span></div>
+    <div><span class="badge" style="background:${GRADE_COLORS[gi]}">${t.grades[gi]}</span><span class="action">${t.actions[gi]}</span></div>
+    <div class="bar"><i style="left:calc(${(d*100).toFixed(1)}% - 1.5px)"></i></div>
+    <div class="ticks"><span style="left:0">0</span><span style="left:23%">0.23</span><span style="left:40%">0.40</span><span style="left:100%">1</span></div>
+    <dl>
+      <dt>${t.coverage}</dt><dd>${fmt(1-d)}</dd>
+      <dt>${t.footprint}</dt><dd>${g.M_area_m2.toFixed(2)} m²</dd>
+      <dt>${t.residual}</dt><dd>${g.R_area_m2.toFixed(2)} m²</dd>
+      <dt>${t.rank}</dt><dd>Rank ${rankOf(d)}</dd>
+    </dl>`;
+  crop(document.getElementById("cRGB"), g, "RGB");
+  crop(document.getElementById("cM"), g, "M");
+  crop(document.getElementById("cR"), g, "R");
+}
+function renderScene(){
+  if (!regions.length) return;
+  const t = I18N[lang]; let M = 0, R = 0; const cnt = [0,0,0];
+  regions.forEach(g => { M += g.M_pixels; R += g.R_pixels; cnt[gradeIdx(g.degradation_D)]++; });
+  document.getElementById("sceneD").textContent = fmt(1 - R/M);
+  document.getElementById("dist").innerHTML = cnt.map((c,i) => `<div title="${t.grades[i]}: ${c}" style="width:${100*c/regions.length}%;background:${GRADE_COLORS[i]}"></div>`).join("");
+  document.getElementById("sceneDl").innerHTML = `<dt>${t.bays}</dt><dd>${regions.length}</dd>` +
+    cnt.map((c,i) => `<dt><i class="sw" style="background:${GRADE_COLORS[i]}"></i>${t.grades[i]}</dt><dd>${c}</dd>`).join("");
+}
+
+/* ---------------------------------------------------------- interaction */
+const tip = document.getElementById("tip");
+function locate(ev){
+  const r = ov.getBoundingClientRect();
+  return {x: Math.floor((ev.clientX - r.left) * W / r.width), y: Math.floor((ev.clientY - r.top) * H / r.height),
+          cx: ev.clientX - r.left, cy: ev.clientY - r.top};
+}
+function setHover(i, p){
+  if (i !== hover){ hover = i; draw(); renderSelected(i); }
+  if (i === -1 || !p){ tip.style.display = "none"; return; }
+  const g = regions[i], gi = gradeIdx(g.degradation_D), t = I18N[lang];
+  tip.innerHTML = `${t.bay} ${pad2(g.bay_id)} · D = <b>${fmt(g.degradation_D)}</b> · <span style="color:${GRADE_COLORS[gi]};font-weight:700">${t.grades[gi]}</span>`;
+  tip.style.left = p.cx + "px"; tip.style.top = p.cy + "px"; tip.style.display = "block";
+  tip.style.transform = p.cx > ov.clientWidth - tip.offsetWidth - 24 ? "translate(calc(-100% - 14px),14px)" : "translate(14px,14px)";
+}
+ov.addEventListener("pointermove", ev => { if (!regions.length) return; const p = locate(ev); setHover(bayAt(p.x, p.y), p); });
+ov.addEventListener("pointerdown", ev => { if (!regions.length) return; const p = locate(ev); setHover(bayAt(p.x, p.y), p); });
+ov.addEventListener("pointerleave", () => { if (!matchMedia("(pointer:coarse)").matches) setHover(-1); });
+const bAll = document.getElementById("btnAll"), bGrade = document.getElementById("btnGrade");
+bAll.addEventListener("click", () => { showAll = !showAll; if (showAll) gradeMap = false; sync(); });
+bGrade.addEventListener("click", () => { gradeMap = !gradeMap; if (gradeMap) showAll = false; sync(); });
+function sync(){ bAll.setAttribute("aria-pressed", showAll); bGrade.setAttribute("aria-pressed", gradeMap); draw(); }
+
+applyLang(pickLang());
+init().catch(e => { const ld = document.getElementById("loading"); if (ld) ld.textContent = "Could not load the demo assets: " + e.message; });
+</script>
+</body>
+</html>

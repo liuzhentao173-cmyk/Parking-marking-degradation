@@ -1,0 +1,1435 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "measurement_source": "Blender geometry and procedural paint material; no network inference",
+  "coordinate_system": "top-left origin, x rightward, y downward; half-open bounding boxes",
+  "image": "topdown_rgb.webp",
+  "image_width": 2048,
+  "image_height": 1536,
+  "formula": "D = 1 - |R intersect M| / |M|",
+  "support": "one complete white parking-bay outline (two sides and back)",
+  "grading": [
+    {
+      "grade": "I",
+      "min": 0,
+      "max": 0.23,
+      "upper_inclusive": false
+    },
+    {
+      "grade": "II",
+      "min": 0.23,
+      "max": 0.4,
+      "upper_inclusive": false
+    },
+    {
+      "grade": "III",
+      "min": 0.4,
+      "max": 1,
+      "upper_inclusive": true
+    }
+  ],
+  "regions": [
+    {
+      "bay_id": 1,
+      "label": "Bay 01",
+      "bbox_xyxy": [
+        359,
+        203,
+        448,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.17529296875,
+        0.13216145833333334,
+        0.218505859375,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        403.0,
+        271.0396388650043
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 115,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.028076171875,
+      "degradation_D": 0.9802235597592434,
+      "degradation_percent": 98.02235597592434,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 2,
+      "label": "Bay 02",
+      "bbox_xyxy": [
+        448,
+        203,
+        537,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.218994140625,
+        0.13216145833333334,
+        0.26220703125,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        492.5,
+        271.0396388650043
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 1578,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.38525390625,
+      "degradation_D": 0.7286328460877043,
+      "degradation_percent": 72.86328460877043,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 3,
+      "label": "Bay 03",
+      "bbox_xyxy": [
+        538,
+        203,
+        627,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.2626953125,
+        0.13216145833333334,
+        0.305908203125,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        584.6869985412108,
+        270.015590809628
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 1112,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 0.271484375,
+      "degradation_D": 0.7972283005105762,
+      "degradation_percent": 79.72283005105763,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 4,
+      "label": "Bay 04",
+      "bbox_xyxy": [
+        627,
+        203,
+        717,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.306396484375,
+        0.13216145833333334,
+        0.349853515625,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        671.75,
+        271.0734686854783
+      ],
+      "M_pixels": 5812,
+      "R_pixels": 3599,
+      "M_area_m2": 1.4189453125,
+      "R_area_m2": 0.878662109375,
+      "degradation_D": 0.38076393668272535,
+      "degradation_percent": 38.07639366827254,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 5,
+      "label": "Bay 05",
+      "bbox_xyxy": [
+        717,
+        203,
+        806,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.350341796875,
+        0.13216145833333334,
+        0.3935546875,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        758.8130014587892,
+        270.015590809628
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 5484,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 1.3388671875,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 6,
+      "label": "Bay 06",
+      "bbox_xyxy": [
+        807,
+        203,
+        896,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.39404296875,
+        0.13216145833333334,
+        0.437255859375,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        851.0,
+        271.0396388650043
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 5815,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 1.419677734375,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 7,
+      "label": "Bay 07",
+      "bbox_xyxy": [
+        896,
+        203,
+        985,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.437744140625,
+        0.13216145833333334,
+        0.48095703125,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        940.5,
+        271.0396388650043
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 69,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.016845703125,
+      "degradation_D": 0.988134135855546,
+      "degradation_percent": 98.8134135855546,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 8,
+      "label": "Bay 08",
+      "bbox_xyxy": [
+        986,
+        203,
+        1075,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.4814453125,
+        0.13216145833333334,
+        0.524658203125,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        1032.6869985412109,
+        270.015590809628
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 2005,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 0.489501953125,
+      "degradation_D": 0.6343909555069293,
+      "degradation_percent": 63.439095550692926,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 9,
+      "label": "Bay 09",
+      "bbox_xyxy": [
+        1075,
+        203,
+        1165,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.525146484375,
+        0.13216145833333334,
+        0.568603515625,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        1119.75,
+        271.0734686854783
+      ],
+      "M_pixels": 5812,
+      "R_pixels": 1496,
+      "M_area_m2": 1.4189453125,
+      "R_area_m2": 0.365234375,
+      "degradation_D": 0.7426015141087405,
+      "degradation_percent": 74.26015141087406,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 10,
+      "label": "Bay 10",
+      "bbox_xyxy": [
+        1165,
+        203,
+        1254,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.569091796875,
+        0.13216145833333334,
+        0.6123046875,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        1206.8130014587891,
+        270.015590809628
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 3897,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 0.951416015625,
+      "degradation_D": 0.2893873085339168,
+      "degradation_percent": 28.938730853391682,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 11,
+      "label": "Bay 11",
+      "bbox_xyxy": [
+        1255,
+        203,
+        1344,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.61279296875,
+        0.13216145833333334,
+        0.656005859375,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        1299.0,
+        271.0396388650043
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 5814,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 1.41943359375,
+      "degradation_D": 0.00017196904557181814,
+      "degradation_percent": 0.017196904557181814,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 12,
+      "label": "Bay 12",
+      "bbox_xyxy": [
+        1344,
+        203,
+        1433,
+        372
+      ],
+      "bbox_normalized_xyxy": [
+        0.656494140625,
+        0.13216145833333334,
+        0.69970703125,
+        0.24186197916666666
+      ],
+      "centroid_xy": [
+        1388.5,
+        271.0396388650043
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 5815,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 1.419677734375,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 13,
+      "label": "Bay 13",
+      "bbox_xyxy": [
+        359,
+        576,
+        448,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.17529296875,
+        0.375,
+        0.218505859375,
+        0.484375
+      ],
+      "centroid_xy": [
+        402.99160332331627,
+        673.6742089446703
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 140,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.0341796875,
+      "degradation_D": 0.9752519003005127,
+      "degradation_percent": 97.52519003005126,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 14,
+      "label": "Bay 14",
+      "bbox_xyxy": [
+        448,
+        576,
+        537,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.218994140625,
+        0.375,
+        0.26220703125,
+        0.484375
+      ],
+      "centroid_xy": [
+        492.50839667668373,
+        673.6742089446703
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 1502,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.36669921875,
+      "degradation_D": 0.7344882446526427,
+      "degradation_percent": 73.44882446526427,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 15,
+      "label": "Bay 15",
+      "bbox_xyxy": [
+        538,
+        576,
+        627,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.2626953125,
+        0.375,
+        0.305908203125,
+        0.484375
+      ],
+      "centroid_xy": [
+        584.7658097203978,
+        674.6246950647401
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 1559,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.380615234375,
+      "degradation_D": 0.707449802964909,
+      "degradation_percent": 70.7449802964909,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 16,
+      "label": "Bay 16",
+      "bbox_xyxy": [
+        627,
+        576,
+        717,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.306396484375,
+        0.375,
+        0.349853515625,
+        0.484375
+      ],
+      "centroid_xy": [
+        671.75,
+        673.6925388967468
+      ],
+      "M_pixels": 5656,
+      "R_pixels": 3654,
+      "M_area_m2": 1.380859375,
+      "R_area_m2": 0.89208984375,
+      "degradation_D": 0.35396039603960394,
+      "degradation_percent": 35.396039603960396,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 17,
+      "label": "Bay 17",
+      "bbox_xyxy": [
+        717,
+        576,
+        806,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.350341796875,
+        0.375,
+        0.3935546875,
+        0.484375
+      ],
+      "centroid_xy": [
+        758.7341902796022,
+        674.6246950647401
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 5329,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 1.301025390625,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 18,
+      "label": "Bay 18",
+      "bbox_xyxy": [
+        807,
+        576,
+        896,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.39404296875,
+        0.375,
+        0.437255859375,
+        0.484375
+      ],
+      "centroid_xy": [
+        850.9916033233162,
+        673.6742089446703
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 5656,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 1.380859375,
+      "degradation_D": 0.00017677214071065706,
+      "degradation_percent": 0.017677214071065706,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 19,
+      "label": "Bay 19",
+      "bbox_xyxy": [
+        896,
+        576,
+        985,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.437744140625,
+        0.375,
+        0.48095703125,
+        0.484375
+      ],
+      "centroid_xy": [
+        940.5083966766838,
+        673.6742089446703
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 69,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.016845703125,
+      "degradation_D": 0.987802722290967,
+      "degradation_percent": 98.7802722290967,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 20,
+      "label": "Bay 20",
+      "bbox_xyxy": [
+        986,
+        576,
+        1075,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.4814453125,
+        0.375,
+        0.524658203125,
+        0.484375
+      ],
+      "centroid_xy": [
+        1032.7658097203978,
+        674.6246950647401
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 1773,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.432861328125,
+      "degradation_D": 0.6672921748920999,
+      "degradation_percent": 66.72921748920999,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 21,
+      "label": "Bay 21",
+      "bbox_xyxy": [
+        1075,
+        576,
+        1165,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.525146484375,
+        0.375,
+        0.568603515625,
+        0.484375
+      ],
+      "centroid_xy": [
+        1119.75,
+        673.6925388967468
+      ],
+      "M_pixels": 5656,
+      "R_pixels": 1640,
+      "M_area_m2": 1.380859375,
+      "R_area_m2": 0.400390625,
+      "degradation_D": 0.71004243281471,
+      "degradation_percent": 71.004243281471,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 22,
+      "label": "Bay 22",
+      "bbox_xyxy": [
+        1165,
+        576,
+        1254,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.569091796875,
+        0.375,
+        0.6123046875,
+        0.484375
+      ],
+      "centroid_xy": [
+        1206.7341902796022,
+        674.6246950647401
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 3526,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.86083984375,
+      "degradation_D": 0.3383373991367986,
+      "degradation_percent": 33.833739913679864,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 23,
+      "label": "Bay 23",
+      "bbox_xyxy": [
+        1255,
+        576,
+        1344,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.61279296875,
+        0.375,
+        0.656005859375,
+        0.484375
+      ],
+      "centroid_xy": [
+        1298.9916033233162,
+        673.6742089446703
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 5656,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 1.380859375,
+      "degradation_D": 0.00017677214071065706,
+      "degradation_percent": 0.017677214071065706,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 24,
+      "label": "Bay 24",
+      "bbox_xyxy": [
+        1344,
+        576,
+        1433,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.656494140625,
+        0.375,
+        0.69970703125,
+        0.484375
+      ],
+      "centroid_xy": [
+        1388.5083966766838,
+        673.6742089446703
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 5657,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 1.381103515625,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 25,
+      "label": "Bay 25",
+      "bbox_xyxy": [
+        1434,
+        576,
+        1523,
+        744
+      ],
+      "bbox_normalized_xyxy": [
+        0.7001953125,
+        0.375,
+        0.743408203125,
+        0.484375
+      ],
+      "centroid_xy": [
+        1480.7658097203978,
+        674.6246950647401
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 108,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.0263671875,
+      "degradation_D": 0.9797335334959655,
+      "degradation_percent": 97.97335334959655,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 26,
+      "label": "Bay 26",
+      "bbox_xyxy": [
+        359,
+        792,
+        448,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.17529296875,
+        0.515625,
+        0.218505859375,
+        0.625
+      ],
+      "centroid_xy": [
+        402.99160332331627,
+        861.8257910553297
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 1673,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.408447265625,
+      "degradation_D": 0.704260208591126,
+      "degradation_percent": 70.4260208591126,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 27,
+      "label": "Bay 27",
+      "bbox_xyxy": [
+        448,
+        792,
+        537,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.218994140625,
+        0.515625,
+        0.26220703125,
+        0.625
+      ],
+      "centroid_xy": [
+        492.50839667668373,
+        861.8257910553297
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 1265,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.308837890625,
+      "degradation_D": 0.7763832420010606,
+      "degradation_percent": 77.63832420010606,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 28,
+      "label": "Bay 28",
+      "bbox_xyxy": [
+        538,
+        792,
+        627,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.2626953125,
+        0.515625,
+        0.305908203125,
+        0.625
+      ],
+      "centroid_xy": [
+        584.7658097203978,
+        860.8753049352599
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 3846,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.93896484375,
+      "degradation_D": 0.27828860949521483,
+      "degradation_percent": 27.828860949521484,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 29,
+      "label": "Bay 29",
+      "bbox_xyxy": [
+        627,
+        792,
+        717,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.306396484375,
+        0.515625,
+        0.349853515625,
+        0.625
+      ],
+      "centroid_xy": [
+        671.75,
+        861.8074611032532
+      ],
+      "M_pixels": 5656,
+      "R_pixels": 5655,
+      "M_area_m2": 1.380859375,
+      "R_area_m2": 1.380615234375,
+      "degradation_D": 0.00017680339462522454,
+      "degradation_percent": 0.017680339462522454,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 30,
+      "label": "Bay 30",
+      "bbox_xyxy": [
+        717,
+        792,
+        806,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.350341796875,
+        0.515625,
+        0.3935546875,
+        0.625
+      ],
+      "centroid_xy": [
+        758.7341902796022,
+        860.8753049352599
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 5329,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 1.301025390625,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 31,
+      "label": "Bay 31",
+      "bbox_xyxy": [
+        807,
+        792,
+        896,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.39404296875,
+        0.515625,
+        0.437255859375,
+        0.625
+      ],
+      "centroid_xy": [
+        850.9916033233162,
+        861.8257910553297
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 121,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.029541015625,
+      "degradation_D": 0.9786105709740145,
+      "degradation_percent": 97.86105709740144,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 32,
+      "label": "Bay 32",
+      "bbox_xyxy": [
+        896,
+        792,
+        985,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.437744140625,
+        0.515625,
+        0.48095703125,
+        0.625
+      ],
+      "centroid_xy": [
+        940.5083966766838,
+        861.8257910553297
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 1485,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.362548828125,
+      "degradation_D": 0.7374933710447233,
+      "degradation_percent": 73.74933710447233,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 33,
+      "label": "Bay 33",
+      "bbox_xyxy": [
+        986,
+        792,
+        1075,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.4814453125,
+        0.515625,
+        0.524658203125,
+        0.625
+      ],
+      "centroid_xy": [
+        1032.7658097203978,
+        860.8753049352599
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 1632,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.3984375,
+      "degradation_D": 0.6937511728279226,
+      "degradation_percent": 69.37511728279226,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 34,
+      "label": "Bay 34",
+      "bbox_xyxy": [
+        1075,
+        792,
+        1165,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.525146484375,
+        0.515625,
+        0.568603515625,
+        0.625
+      ],
+      "centroid_xy": [
+        1119.690421388102,
+        861.7665545325779
+      ],
+      "M_pixels": 5648,
+      "R_pixels": 3851,
+      "M_area_m2": 1.37890625,
+      "R_area_m2": 0.940185546875,
+      "degradation_D": 0.3181657223796034,
+      "degradation_percent": 31.81657223796034,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 35,
+      "label": "Bay 35",
+      "bbox_xyxy": [
+        1165,
+        792,
+        1254,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.569091796875,
+        0.515625,
+        0.6123046875,
+        0.625
+      ],
+      "centroid_xy": [
+        1206.778790155927,
+        860.8440728912268
+      ],
+      "M_pixels": 5323,
+      "R_pixels": 5323,
+      "M_area_m2": 1.299560546875,
+      "R_area_m2": 1.299560546875,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 36,
+      "label": "Bay 36",
+      "bbox_xyxy": [
+        1255,
+        792,
+        1344,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.61279296875,
+        0.515625,
+        0.656005859375,
+        0.625
+      ],
+      "centroid_xy": [
+        1298.9916033233162,
+        861.8257910553297
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 5657,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 1.381103515625,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 37,
+      "label": "Bay 37",
+      "bbox_xyxy": [
+        1344,
+        792,
+        1433,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.656494140625,
+        0.515625,
+        0.69970703125,
+        0.625
+      ],
+      "centroid_xy": [
+        1388.5083966766838,
+        861.8257910553297
+      ],
+      "M_pixels": 5657,
+      "R_pixels": 119,
+      "M_area_m2": 1.381103515625,
+      "R_area_m2": 0.029052734375,
+      "degradation_D": 0.9789641152554357,
+      "degradation_percent": 97.89641152554357,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 38,
+      "label": "Bay 38",
+      "bbox_xyxy": [
+        1434,
+        792,
+        1523,
+        960
+      ],
+      "bbox_normalized_xyxy": [
+        0.7001953125,
+        0.515625,
+        0.743408203125,
+        0.625
+      ],
+      "centroid_xy": [
+        1480.7658097203978,
+        860.8753049352599
+      ],
+      "M_pixels": 5329,
+      "R_pixels": 1403,
+      "M_area_m2": 1.301025390625,
+      "R_area_m2": 0.342529296875,
+      "degradation_D": 0.7367235879151811,
+      "degradation_percent": 73.6723587915181,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 39,
+      "label": "Bay 39",
+      "bbox_xyxy": [
+        359,
+        1164,
+        448,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.17529296875,
+        0.7581380208333334,
+        0.218505859375,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        403.0,
+        1264.4603611349958
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 1587,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.387451171875,
+      "degradation_D": 0.727085124677558,
+      "degradation_percent": 72.70851246775581,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 40,
+      "label": "Bay 40",
+      "bbox_xyxy": [
+        448,
+        1164,
+        537,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.218994140625,
+        0.7581380208333334,
+        0.26220703125,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        492.5,
+        1264.4603611349958
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 3883,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.947998046875,
+      "degradation_D": 0.332244196044712,
+      "degradation_percent": 33.2244196044712,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 41,
+      "label": "Bay 41",
+      "bbox_xyxy": [
+        538,
+        1164,
+        627,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.2626953125,
+        0.7581380208333334,
+        0.305908203125,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        584.6869985412108,
+        1265.484409190372
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 5484,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 1.3388671875,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 42,
+      "label": "Bay 42",
+      "bbox_xyxy": [
+        627,
+        1164,
+        717,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.306396484375,
+        0.7581380208333334,
+        0.349853515625,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        671.75,
+        1264.4265313145218
+      ],
+      "M_pixels": 5812,
+      "R_pixels": 5809,
+      "M_area_m2": 1.4189453125,
+      "R_area_m2": 1.418212890625,
+      "degradation_D": 0.0005161734342739033,
+      "degradation_percent": 0.05161734342739033,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 43,
+      "label": "Bay 43",
+      "bbox_xyxy": [
+        717,
+        1164,
+        806,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.350341796875,
+        0.7581380208333334,
+        0.3935546875,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        758.8130014587892,
+        1265.484409190372
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 84,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 0.0205078125,
+      "degradation_D": 0.9846827133479212,
+      "degradation_percent": 98.46827133479212,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 44,
+      "label": "Bay 44",
+      "bbox_xyxy": [
+        807,
+        1164,
+        896,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.39404296875,
+        0.7581380208333334,
+        0.437255859375,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        851.0,
+        1264.4603611349958
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 1882,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.45947265625,
+      "degradation_D": 0.6763542562338779,
+      "degradation_percent": 67.63542562338779,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 45,
+      "label": "Bay 45",
+      "bbox_xyxy": [
+        896,
+        1164,
+        985,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.437744140625,
+        0.7581380208333334,
+        0.48095703125,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        940.5,
+        1264.4603611349958
+      ],
+      "M_pixels": 5815,
+      "R_pixels": 1408,
+      "M_area_m2": 1.419677734375,
+      "R_area_m2": 0.34375,
+      "degradation_D": 0.7578675838349097,
+      "degradation_percent": 75.78675838349098,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    },
+    {
+      "bay_id": 46,
+      "label": "Bay 46",
+      "bbox_xyxy": [
+        986,
+        1164,
+        1075,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.4814453125,
+        0.7581380208333334,
+        0.524658203125,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        1032.6869985412109,
+        1265.484409190372
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 3591,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 0.876708984375,
+      "degradation_D": 0.3451859956236324,
+      "degradation_percent": 34.51859956236324,
+      "grade": "II",
+      "paint_material": "White paint | faded"
+    },
+    {
+      "bay_id": 47,
+      "label": "Bay 47",
+      "bbox_xyxy": [
+        1075,
+        1164,
+        1165,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.525146484375,
+        0.7581380208333334,
+        0.568603515625,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        1119.75,
+        1264.4265313145218
+      ],
+      "M_pixels": 5812,
+      "R_pixels": 5811,
+      "M_area_m2": 1.4189453125,
+      "R_area_m2": 1.418701171875,
+      "degradation_D": 0.00017205781142459742,
+      "degradation_percent": 0.017205781142459742,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 48,
+      "label": "Bay 48",
+      "bbox_xyxy": [
+        1165,
+        1164,
+        1254,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.569091796875,
+        0.7581380208333334,
+        0.6123046875,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        1206.8130014587891,
+        1265.484409190372
+      ],
+      "M_pixels": 5484,
+      "R_pixels": 5484,
+      "M_area_m2": 1.3388671875,
+      "R_area_m2": 1.3388671875,
+      "degradation_D": 0.0,
+      "degradation_percent": 0.0,
+      "grade": "I",
+      "paint_material": "White paint | recent"
+    },
+    {
+      "bay_id": 49,
+      "label": "Bay 49",
+      "bbox_xyxy": [
+        1263,
+        1164,
+        1381,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.61669921875,
+        0.7581380208333334,
+        0.674072265625,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        1321.2682593307593,
+        1268.753137065637
+      ],
+      "M_pixels": 6216,
+      "R_pixels": 69,
+      "M_area_m2": 1.517578125,
+      "R_area_m2": 0.016845703125,
+      "degradation_D": 0.9888996138996139,
+      "degradation_percent": 98.88996138996139,
+      "grade": "III",
+      "paint_material": "White paint | heavily worn"
+    },
+    {
+      "bay_id": 50,
+      "label": "Bay 50",
+      "bbox_xyxy": [
+        1413,
+        1164,
+        1531,
+        1333
+      ],
+      "bbox_normalized_xyxy": [
+        0.690185546875,
+        0.7581380208333334,
+        0.747314453125,
+        0.8678385416666666
+      ],
+      "centroid_xy": [
+        1471.75,
+        1268.7733998070119
+      ],
+      "M_pixels": 6218,
+      "R_pixels": 1769,
+      "M_area_m2": 1.51806640625,
+      "R_area_m2": 0.431884765625,
+      "degradation_D": 0.7155033772917336,
+      "degradation_percent": 71.55033772917336,
+      "grade": "III",
+      "paint_material": "White paint | chipped"
+    }
+  ],
+  "measurement_grid_width": 4096,
+  "measurement_grid_height": 3072
+}

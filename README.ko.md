@@ -6,12 +6,12 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · **한국어** · [Deutsch](README.de.md) · [Français](README.fr.md)
 
-[![데모](https://img.shields.io/badge/demo-라이브_데모-4cc2ff)](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=ko)
+[![데모](https://img.shields.io/badge/demo-라이브_데모-4cc2ff)](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=ko)
 [![모델 가중치](https://img.shields.io/badge/weights-10.5281%2Fzenodo.20825454-1682d4)](https://doi.org/10.5281/zenodo.20825454)
 [![저널](https://img.shields.io/badge/journal-Measurement-f0a33a)](https://doi.org/10.1016/j.measurement.2026.123332)
 
 <br>
-<a href="https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
+<a href="https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
 
 </div>
 
@@ -19,7 +19,7 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 이 코드는 주차장을 촬영한 UAV 정사영상 한 장으로부터 영역별 **열화 지수 D**, **공간 열화 히트맵**, 그리고 **측정 불확도**를 포함한 **유지관리 등급**을 산출합니다. 처리는 두 단계로 이루어집니다. 먼저 각 표시의 원래 영역(도료가 마모되어 사라진 부분 포함)을 **복원**하고, 그다음 그 영역 안에 남아 있는 도료를 **측정**합니다.
 
-> **[▶ 인터랙티브 데모 열기](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=ko)**: 주차 구획 위에 마우스를 올리면 원래 영역 *M*, 잔존 도료 *R*, 열화 지수 *D*, 유지관리 등급이 나타납니다.
+> **[▶ 인터랙티브 데모 열기](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=ko)**: 주차 구획 위에 마우스를 올리면 원래 영역 *M*, 잔존 도료 *R*, 열화 지수 *D*, 유지관리 등급이 나타납니다.
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 

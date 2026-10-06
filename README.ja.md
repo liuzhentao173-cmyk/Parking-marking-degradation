@@ -6,12 +6,12 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · **日本語** · [한국어](README.ko.md) · [Deutsch](README.de.md) · [Français](README.fr.md)
 
-[![デモ](https://img.shields.io/badge/demo-ライブデモ-4cc2ff)](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=ja)
+[![デモ](https://img.shields.io/badge/demo-ライブデモ-4cc2ff)](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=ja)
 [![モデル重み](https://img.shields.io/badge/weights-10.5281%2Fzenodo.20825454-1682d4)](https://doi.org/10.5281/zenodo.20825454)
 [![論文誌](https://img.shields.io/badge/journal-Measurement-f0a33a)](https://doi.org/10.1016/j.measurement.2026.123332)
 
 <br>
-<a href="https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
+<a href="https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
 
 </div>
 
@@ -19,7 +19,7 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 本コードは、駐車場を撮影した UAV オルソ画像 1 枚から、領域ごとの**劣化指標 D**、**空間的な劣化ヒートマップ**、および**測定不確かさ**付きの**維持管理グレード**を出力します。処理は 2 段階です。まず各区画線の元の範囲（塗料が摩耗で消えた部分を含む）を**復元**し、次にその範囲内に残っている塗料を**測定**します。
 
-> **[▶ インタラクティブデモを開く](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=ja)**：駐車枠にカーソルを合わせると、元の範囲 *M*、残存塗料 *R*、劣化指標 *D*、維持管理グレードが表示されます。
+> **[▶ インタラクティブデモを開く](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=ja)**：駐車枠にカーソルを合わせると、元の範囲 *M*、残存塗料 *R*、劣化指標 *D*、維持管理グレードが表示されます。
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 

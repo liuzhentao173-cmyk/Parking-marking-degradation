@@ -6,12 +6,12 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · **Deutsch** · [Français](README.fr.md)
 
-[![Demo](https://img.shields.io/badge/demo-live-4cc2ff)](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=de)
+[![Demo](https://img.shields.io/badge/demo-live-4cc2ff)](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=de)
 [![Modellgewichte](https://img.shields.io/badge/weights-10.5281%2Fzenodo.20825454-1682d4)](https://doi.org/10.5281/zenodo.20825454)
 [![Zeitschrift](https://img.shields.io/badge/journal-Measurement-f0a33a)](https://doi.org/10.1016/j.measurement.2026.123332)
 
 <br>
-<a href="https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
+<a href="https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
 
 </div>
 
@@ -19,7 +19,7 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 Aus einem einzelnen UAV-Orthofoto eines Parkplatzes erzeugt dieser Code für jeden Bereich einen **Degradationsindex D**, eine **räumliche Wärmekarte** und eine **Instandhaltungsklasse** mit ihrer **Messunsicherheit**. Das geschieht in zwei Schritten: Zuerst wird die ursprüngliche Fläche jeder Markierung *rekonstruiert*, einschließlich der Abschnitte, deren Farbe abgefahren ist. Danach wird die Farbe *gemessen*, die innerhalb dieser Fläche noch vorhanden ist.
 
-> **[▶ Interaktive Demo öffnen](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=de)**: Fahren Sie mit dem Zeiger über eine Markierung, um ihre ursprüngliche Fläche *M*, die verbliebene Farbe *R*, den Index *D* und die Instandhaltungsklasse zu sehen.
+> **[▶ Interaktive Demo öffnen](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=de)**: Fahren Sie mit dem Zeiger über eine Markierung, um ihre ursprüngliche Fläche *M*, die verbliebene Farbe *R*, den Index *D* und die Instandhaltungsklasse zu sehen.
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 

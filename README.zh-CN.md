@@ -6,12 +6,12 @@
 
 [English](README.md) · **简体中文** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Deutsch](README.de.md) · [Français](README.fr.md)
 
-[![在线演示](https://img.shields.io/badge/demo-在线演示-4cc2ff)](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=zh)
+[![在线演示](https://img.shields.io/badge/demo-在线演示-4cc2ff)](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=zh)
 [![模型权重](https://img.shields.io/badge/weights-10.5281%2Fzenodo.20825454-1682d4)](https://doi.org/10.5281/zenodo.20825454)
 [![期刊](https://img.shields.io/badge/journal-Measurement-f0a33a)](https://doi.org/10.1016/j.measurement.2026.123332)
 
 <br>
-<a href="https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
+<a href="https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
 
 </div>
 
@@ -19,7 +19,7 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 本代码以单张停车场无人机正射影像为输入，输出逐区域的**退化指数 D**、**空间退化热图**，以及附带**测量不确定度**的**维护等级**。流程分两步：先**恢复**每条标线的原始区域（包括漆料已磨掉的部分），再**测量**该区域内仍然残留的漆料。
 
-> **[▶ 打开交互演示](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=zh)**：鼠标划过任意车位，即可看到它的原始区域 *M*、残留漆料 *R*、退化指数 *D* 和维护等级。
+> **[▶ 打开交互演示](https://liuzhentao173-cmyk.github.io/Parking-marking-degradation/?lang=zh)**：鼠标划过任意车位，即可看到它的原始区域 *M*、残留漆料 *R*、退化指数 *D* 和维护等级。
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 

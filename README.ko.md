@@ -8,7 +8,7 @@
 
 [![데모](https://img.shields.io/badge/demo-라이브_데모-4cc2ff)](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=ko)
 [![모델 가중치](https://img.shields.io/badge/weights-10.5281%2Fzenodo.20825454-1682d4)](https://doi.org/10.5281/zenodo.20825454)
-[![저널](https://img.shields.io/badge/journal-Measurement-f0a33a)](#인용)
+[![저널](https://img.shields.io/badge/journal-Measurement-f0a33a)](https://doi.org/10.1016/j.measurement.2026.123332)
 
 <br>
 <a href="https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/"><img src="docs/assets/parking_flyover.gif" width="720" alt="Blender synthetic parking lot"></a>
@@ -153,4 +153,18 @@ python comparison/run_all_models.py               && python comparison/extract_c
 
 ## 인용
 
-논문이 *Measurement*에 게재되면 인용 정보를 추가하겠습니다. 그 전까지는 위의 제목과 저자를 인용해 주세요.
+이 코드나 사전 학습 가중치를 사용하신다면 아래 논문을 인용해 주세요([doi.org/10.1016/j.measurement.2026.123332](https://doi.org/10.1016/j.measurement.2026.123332), 2026년 10월 2일 온라인 게재, 현재 In Press, Journal Pre-proof).
+
+Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang. Recover-then-measure: Hybrid segmentation and adaptive binarization for quantitative assessment of parking lot pavement marking degradation from UAV imagery. *Measurement*, 2026, 123332.
+
+```bibtex
+@article{Liu2026RecoverThenMeasure,
+  title   = {Recover-then-measure: Hybrid segmentation and adaptive binarization for quantitative assessment of parking lot pavement marking degradation from {UAV} imagery},
+  author  = {Liu, Zhentao and Liu, Jiaming and Xie, Zhengtao and Xue, Kai and Gu, Shan and Dang, Ji},
+  journal = {Measurement},
+  year    = {2026},
+  pages   = {123332},
+  doi     = {10.1016/j.measurement.2026.123332},
+  note    = {In press, journal pre-proof}
+}
+```

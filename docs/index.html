@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recover-then-Measure · Interactive demo</title>
 <meta name="description" content="Hover any pavement marking to see its original footprint M, its residual paint R, the degradation index D and the maintenance grade.">
-<link rel="preload" href="assets/topdown_rgb.webp" as="fetch" crossorigin>
+<link rel="preload" href="assets/topdown_rgb.webp?v=20261006b" as="fetch" crossorigin>
 <style>
 :root{
   --bg:#0c0f14; --panel:#141920; --panel2:#1a2029; --line:#27303b; --text:#e8eef4; --muted:#8c99a6;
@@ -248,9 +248,9 @@ function buildLayer(colorOf){
 
 async function init(){
   const [json, rgb, m, r, id] = await Promise.all([
-    fetch("assets/regions.json").then(x => x.json()),
-    bitmap("assets/topdown_rgb.webp"), bitmap("assets/mask_M.png"),
-    bitmap("assets/mask_R.png"), bitmap("assets/mask_ids.png")]);
+    fetch("assets/regions.json?v=20261006b").then(x => x.json()),
+    bitmap("assets/topdown_rgb.webp?v=20261006b"), bitmap("assets/mask_M.png?v=20261006b"),
+    bitmap("assets/mask_R.png?v=20261006b"), bitmap("assets/mask_ids.png?v=20261006b")]);
   regions = json.regions; W = json.image_width; H = json.image_height; MPP = json.metres_per_pixel || MPP;
   regions.forEach((g, i) => byId.set(g.id, i));
   rgbBmp = rgb; rgbData = pixels(rgb);

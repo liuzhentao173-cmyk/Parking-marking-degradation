@@ -19,11 +19,11 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 Aus einem einzelnen UAV-Orthofoto eines Parkplatzes erzeugt dieser Code für jeden Bereich einen **Degradationsindex D**, eine **räumliche Wärmekarte** und eine **Instandhaltungsklasse** mit ihrer **Messunsicherheit**. Das geschieht in zwei Schritten: Zuerst wird die ursprüngliche Fläche jeder Markierung *rekonstruiert*, einschließlich der Abschnitte, deren Farbe abgefahren ist. Danach wird die Farbe *gemessen*, die innerhalb dieser Fläche noch vorhanden ist.
 
-> **[▶ Interaktive Demo öffnen](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=de)**: Fahren Sie mit dem Zeiger über einen Stellplatz, um seine ursprüngliche Fläche *M*, die verbliebene Farbe *R*, den Index *D* und die Instandhaltungsklasse zu sehen.
+> **[▶ Interaktive Demo öffnen](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=de)**: Fahren Sie mit dem Zeiger über eine Markierung, um ihre ursprüngliche Fläche *M*, die verbliebene Farbe *R*, den Index *D* und die Instandhaltungsklasse zu sehen.
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 
-Die Demo-Szene ist ein in Blender modellierter und gerenderter Parkplatz. Masken und Werte stammen aus Geometrie und Farbmaterial der Szene; sie sind synthetische Referenzwerte, keine Modellvorhersagen. Jeder Wert bezieht sich auf die vollständige Umrandung eines Stellplatzes.
+Die Demo-Szene ist ein in Blender modellierter und gerenderter Parkplatz. Masken und Werte stammen aus Geometrie und Farbmaterial der Szene; sie sind synthetische Referenzwerte, keine Modellvorhersagen. Alle Markierungen der Szene zählen (Stellplatzlinien, Nummern, Pfeile, Schriftzüge, Sperrflächen, Rollstuhlsymbole, Überweg, Halte- und Fahrbahnlinien sowie die blaue Fläche des Behindertenparkplatzes, insgesamt 132); jeder Wert bezieht sich auf eine vollständige Markierung. R wird an den Pixelmitten ohne Anti-Aliasing bestimmt.
 
 ## Ablauf
 

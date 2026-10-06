@@ -2,7 +2,7 @@
  "schema_version": 2,
  "synthetic": true,
  "measurement_source": "Blender geometry and procedural paint material; no network inference",
- "scope": "white parking-bay outlines",
+ "scope": "every painted marking: bay outlines, bay numbers, arrows, Japanese text, amber hatching, wheelchair symbols, blue accessible surfacing, crossing, stop and lane lines",
  "coordinate_system": "top-left origin, x rightward, y downward; half-open bounding boxes",
  "image": "topdown_rgb.webp",
  "image_width": 4096,
@@ -13,20 +13,17 @@
   {
    "grade": "I",
    "min": 0,
-   "max": 0.23,
-   "upper_inclusive": false
+   "max": 0.23
   },
   {
    "grade": "II",
    "min": 0.23,
-   "max": 0.4,
-   "upper_inclusive": false
+   "max": 0.4
   },
   {
    "grade": "III",
    "min": 0.4,
-   "max": 1,
-   "upper_inclusive": true
+   "max": 1
   }
  ],
  "regions": [
@@ -38,17 +35,17 @@
     718,
     406,
     895,
-    743
+    742
    ],
    "centroid_xy": [
     806.0,
-    542.0792777300086
+    542.1250645105797
    ],
-   "M_pixels": 5815,
-   "R_pixels": 115,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.028076171875,
-   "degradation_D": 0.9802235597592434,
+   "M_pixels": 5813,
+   "R_pixels": 493,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.120361328125,
+   "degradation_D": 0.9151900911749526,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -62,17 +59,17 @@
     897,
     406,
     1074,
-    743
+    742
    ],
    "centroid_xy": [
     985.0,
-    542.0792777300086
+    542.1250645105797
    ],
-   "M_pixels": 5815,
-   "R_pixels": 1578,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.38525390625,
-   "degradation_D": 0.7286328460877043,
+   "M_pixels": 5813,
+   "R_pixels": 2121,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.517822265625,
+   "degradation_D": 0.635128161018407,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -83,20 +80,20 @@
    "category": "bay",
    "label": "Bay 03",
    "bbox_xyxy": [
-    1076,
+    1077,
     406,
     1253,
-    743
+    742
    ],
    "centroid_xy": [
-    1169.3739970824215,
-    540.031181619256
+    1169.388514129444,
+    540.0067456700091
    ],
-   "M_pixels": 5484,
-   "R_pixels": 1112,
-   "M_area_m2": 1.3388671875,
-   "R_area_m2": 0.271484375,
-   "degradation_D": 0.7972283005105762,
+   "M_pixels": 5485,
+   "R_pixels": 1603,
+   "M_area_m2": 1.339111328125,
+   "R_area_m2": 0.391357421875,
+   "degradation_D": 0.7077484047402005,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -107,20 +104,20 @@
    "category": "bay",
    "label": "Bay 04",
    "bbox_xyxy": [
-    1255,
+    1256,
     406,
-    1433,
-    743
+    1432,
+    742
    ],
    "centroid_xy": [
     1343.5,
-    542.1469373709566
+    542.1001031991744
    ],
-   "M_pixels": 5812,
-   "R_pixels": 3599,
-   "M_area_m2": 1.4189453125,
-   "R_area_m2": 0.878662109375,
-   "degradation_D": 0.38076393668272535,
+   "M_pixels": 5814,
+   "R_pixels": 3738,
+   "M_area_m2": 1.41943359375,
+   "R_area_m2": 0.91259765625,
+   "degradation_D": 0.3570691434468525,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -133,18 +130,18 @@
    "bbox_xyxy": [
     1435,
     406,
-    1612,
-    743
+    1611,
+    742
    ],
    "centroid_xy": [
-    1517.6260029175785,
-    540.031181619256
+    1517.611485870556,
+    540.0067456700091
    ],
-   "M_pixels": 5484,
-   "R_pixels": 5484,
-   "M_area_m2": 1.3388671875,
-   "R_area_m2": 1.3388671875,
-   "degradation_D": 0.0,
+   "M_pixels": 5485,
+   "R_pixels": 5483,
+   "M_area_m2": 1.339111328125,
+   "R_area_m2": 1.338623046875,
+   "degradation_D": 0.0003646308113035568,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -158,16 +155,16 @@
     1614,
     406,
     1791,
-    743
+    742
    ],
    "centroid_xy": [
     1702.0,
-    542.0792777300086
+    542.1250645105797
    ],
-   "M_pixels": 5815,
-   "R_pixels": 5815,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 1.419677734375,
+   "M_pixels": 5813,
+   "R_pixels": 5813,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 1.419189453125,
    "degradation_D": 0.0,
    "grade": "I",
    "materials": [
@@ -182,17 +179,17 @@
     1793,
     406,
     1970,
-    743
+    742
    ],
    "centroid_xy": [
     1881.0,
-    542.0792777300086
+    542.1250645105797
    ],
-   "M_pixels": 5815,
-   "R_pixels": 69,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.016845703125,
-   "degradation_D": 0.988134135855546,
+   "M_pixels": 5813,
+   "R_pixels": 443,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.108154296875,
+   "degradation_D": 0.9237915018062962,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -203,20 +200,20 @@
    "category": "bay",
    "label": "Bay 08",
    "bbox_xyxy": [
-    1972,
+    1973,
     406,
     2149,
-    743
+    742
    ],
    "centroid_xy": [
-    2065.3739970824217,
-    540.031181619256
+    2065.388514129444,
+    540.0067456700091
    ],
-   "M_pixels": 5484,
-   "R_pixels": 2005,
-   "M_area_m2": 1.3388671875,
-   "R_area_m2": 0.489501953125,
-   "degradation_D": 0.6343909555069293,
+   "M_pixels": 5485,
+   "R_pixels": 2316,
+   "M_area_m2": 1.339111328125,
+   "R_area_m2": 0.5654296875,
+   "degradation_D": 0.5777575205104831,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -227,20 +224,20 @@
    "category": "bay",
    "label": "Bay 09",
    "bbox_xyxy": [
-    2151,
+    2152,
     406,
-    2329,
-    743
+    2328,
+    742
    ],
    "centroid_xy": [
     2239.5,
-    542.1469373709566
+    542.1001031991744
    ],
-   "M_pixels": 5812,
-   "R_pixels": 1496,
-   "M_area_m2": 1.4189453125,
-   "R_area_m2": 0.365234375,
-   "degradation_D": 0.7426015141087405,
+   "M_pixels": 5814,
+   "R_pixels": 2053,
+   "M_area_m2": 1.41943359375,
+   "R_area_m2": 0.501220703125,
+   "degradation_D": 0.6468868249054007,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -253,18 +250,18 @@
    "bbox_xyxy": [
     2331,
     406,
-    2508,
-    743
+    2507,
+    742
    ],
    "centroid_xy": [
-    2413.6260029175783,
-    540.031181619256
+    2413.611485870556,
+    540.0067456700091
    ],
-   "M_pixels": 5484,
-   "R_pixels": 3897,
-   "M_area_m2": 1.3388671875,
-   "R_area_m2": 0.951416015625,
-   "degradation_D": 0.2893873085339168,
+   "M_pixels": 5485,
+   "R_pixels": 3715,
+   "M_area_m2": 1.339111328125,
+   "R_area_m2": 0.906982421875,
+   "degradation_D": 0.3226982680036463,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -278,17 +275,17 @@
     2510,
     406,
     2687,
-    743
+    742
    ],
    "centroid_xy": [
     2598.0,
-    542.0792777300086
+    542.1250645105797
    ],
-   "M_pixels": 5815,
-   "R_pixels": 5814,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 1.41943359375,
-   "degradation_D": 0.00017196904557181814,
+   "M_pixels": 5813,
+   "R_pixels": 5811,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 1.418701171875,
+   "degradation_D": 0.0003440564252537026,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -302,17 +299,17 @@
     2689,
     406,
     2866,
-    743
+    742
    ],
    "centroid_xy": [
     2777.0,
-    542.0792777300086
+    542.1250645105797
    ],
-   "M_pixels": 5815,
-   "R_pixels": 5815,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 1.419677734375,
-   "degradation_D": 0.0,
+   "M_pixels": 5813,
+   "R_pixels": 5812,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 1.4189453125,
+   "degradation_D": 0.0001720282126268513,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -329,14 +326,14 @@
     1488
    ],
    "centroid_xy": [
-    805.9832066466325,
-    1347.3484178893407
+    806.0,
+    1347.314422057264
    ],
-   "M_pixels": 5657,
-   "R_pixels": 140,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.0341796875,
-   "degradation_D": 0.9752519003005127,
+   "M_pixels": 5658,
+   "R_pixels": 570,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.13916015625,
+   "degradation_D": 0.8992576882290562,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -353,14 +350,14 @@
     1488
    ],
    "centroid_xy": [
-    985.0167933533675,
-    1347.3484178893407
+    985.0,
+    1347.314422057264
    ],
-   "M_pixels": 5657,
-   "R_pixels": 1502,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.36669921875,
-   "degradation_D": 0.7344882446526427,
+   "M_pixels": 5658,
+   "R_pixels": 1995,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.487060546875,
+   "degradation_D": 0.6474019088016967,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -371,20 +368,20 @@
    "category": "bay",
    "label": "Bay 15",
    "bbox_xyxy": [
-    1076,
+    1077,
     1152,
     1253,
     1488
    ],
    "centroid_xy": [
-    1169.5316194407956,
-    1349.2493901294802
+    1169.5478603603603,
+    1349.224662162162
    ],
-   "M_pixels": 5329,
-   "R_pixels": 1559,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.380615234375,
-   "degradation_D": 0.707449802964909,
+   "M_pixels": 5328,
+   "R_pixels": 1889,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.461181640625,
+   "degradation_D": 0.645457957957958,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -395,20 +392,20 @@
    "category": "bay",
    "label": "Bay 16",
    "bbox_xyxy": [
-    1255,
+    1256,
     1152,
-    1433,
+    1432,
     1488
    ],
    "centroid_xy": [
     1343.5,
-    1347.3850777934936
+    1347.3160127253445
    ],
-   "M_pixels": 5656,
-   "R_pixels": 3654,
-   "M_area_m2": 1.380859375,
-   "R_area_m2": 0.89208984375,
-   "degradation_D": 0.35396039603960394,
+   "M_pixels": 5658,
+   "R_pixels": 3695,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.902099609375,
+   "degradation_D": 0.3469423824673029,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -421,18 +418,18 @@
    "bbox_xyxy": [
     1435,
     1152,
-    1612,
+    1611,
     1488
    ],
    "centroid_xy": [
-    1517.4683805592044,
-    1349.2493901294802
+    1517.4521396396397,
+    1349.224662162162
    ],
-   "M_pixels": 5329,
-   "R_pixels": 5329,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 1.301025390625,
-   "degradation_D": 0.0,
+   "M_pixels": 5328,
+   "R_pixels": 5323,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 1.299560546875,
+   "degradation_D": 0.0009384384384384381,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -449,14 +446,14 @@
     1488
    ],
    "centroid_xy": [
-    1701.9832066466324,
-    1347.3484178893407
+    1702.0,
+    1347.314422057264
    ],
-   "M_pixels": 5657,
+   "M_pixels": 5658,
    "R_pixels": 5656,
-   "M_area_m2": 1.381103515625,
+   "M_area_m2": 1.38134765625,
    "R_area_m2": 1.380859375,
-   "degradation_D": 0.00017677214071065706,
+   "degradation_D": 0.0003534817956875047,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -473,14 +470,14 @@
     1488
    ],
    "centroid_xy": [
-    1881.0167933533676,
-    1347.3484178893407
+    1881.0,
+    1347.314422057264
    ],
-   "M_pixels": 5657,
-   "R_pixels": 69,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.016845703125,
-   "degradation_D": 0.987802722290967,
+   "M_pixels": 5658,
+   "R_pixels": 418,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.10205078125,
+   "degradation_D": 0.9261223047013079,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -491,20 +488,20 @@
    "category": "bay",
    "label": "Bay 20",
    "bbox_xyxy": [
-    1972,
+    1973,
     1152,
     2149,
     1488
    ],
    "centroid_xy": [
-    2065.5316194407956,
-    1349.2493901294802
+    2065.5478603603606,
+    1349.224662162162
    ],
-   "M_pixels": 5329,
-   "R_pixels": 1773,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.432861328125,
-   "degradation_D": 0.6672921748920999,
+   "M_pixels": 5328,
+   "R_pixels": 2117,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.516845703125,
+   "degradation_D": 0.6026651651651651,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -515,20 +512,20 @@
    "category": "bay",
    "label": "Bay 21",
    "bbox_xyxy": [
-    2151,
+    2152,
     1152,
-    2329,
+    2328,
     1488
    ],
    "centroid_xy": [
     2239.5,
-    1347.3850777934936
+    1347.3160127253445
    ],
-   "M_pixels": 5656,
-   "R_pixels": 1640,
-   "M_area_m2": 1.380859375,
-   "R_area_m2": 0.400390625,
-   "degradation_D": 0.71004243281471,
+   "M_pixels": 5658,
+   "R_pixels": 2151,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.525146484375,
+   "degradation_D": 0.61983032873807,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -541,18 +538,18 @@
    "bbox_xyxy": [
     2331,
     1152,
-    2508,
+    2507,
     1488
    ],
    "centroid_xy": [
-    2413.4683805592044,
-    1349.2493901294802
+    2413.4521396396394,
+    1349.224662162162
    ],
-   "M_pixels": 5329,
-   "R_pixels": 3526,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.86083984375,
-   "degradation_D": 0.3383373991367986,
+   "M_pixels": 5328,
+   "R_pixels": 3292,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.8037109375,
+   "degradation_D": 0.38213213213213215,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -569,14 +566,14 @@
     1488
    ],
    "centroid_xy": [
-    2597.9832066466324,
-    1347.3484178893407
+    2598.0,
+    1347.314422057264
    ],
-   "M_pixels": 5657,
-   "R_pixels": 5656,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 1.380859375,
-   "degradation_D": 0.00017677214071065706,
+   "M_pixels": 5658,
+   "R_pixels": 5657,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 1.381103515625,
+   "degradation_D": 0.00017674089784380786,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -593,14 +590,14 @@
     1488
    ],
    "centroid_xy": [
-    2777.0167933533676,
-    1347.3484178893407
+    2777.0,
+    1347.314422057264
    ],
-   "M_pixels": 5657,
-   "R_pixels": 5657,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 1.381103515625,
-   "degradation_D": 0.0,
+   "M_pixels": 5658,
+   "R_pixels": 5656,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 1.380859375,
+   "degradation_D": 0.0003534817956875047,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -611,20 +608,20 @@
    "category": "bay",
    "label": "Bay 25",
    "bbox_xyxy": [
-    2868,
+    2869,
     1152,
     3045,
     1488
    ],
    "centroid_xy": [
-    2961.5316194407956,
-    1349.2493901294802
+    2961.5478603603606,
+    1349.224662162162
    ],
-   "M_pixels": 5329,
-   "R_pixels": 108,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.0263671875,
-   "degradation_D": 0.9797335334959655,
+   "M_pixels": 5328,
+   "R_pixels": 404,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.0986328125,
+   "degradation_D": 0.9241741741741741,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -641,14 +638,14 @@
     1920
    ],
    "centroid_xy": [
-    805.9832066466325,
-    1723.6515821106593
+    806.0,
+    1723.685577942736
    ],
-   "M_pixels": 5657,
-   "R_pixels": 1673,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.408447265625,
-   "degradation_D": 0.704260208591126,
+   "M_pixels": 5658,
+   "R_pixels": 2099,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.512451171875,
+   "degradation_D": 0.6290208554259455,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -665,14 +662,14 @@
     1920
    ],
    "centroid_xy": [
-    985.0167933533675,
-    1723.6515821106593
+    985.0,
+    1723.685577942736
    ],
-   "M_pixels": 5657,
-   "R_pixels": 1265,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.308837890625,
-   "degradation_D": 0.7763832420010606,
+   "M_pixels": 5658,
+   "R_pixels": 1887,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.460693359375,
+   "degradation_D": 0.6664899257688229,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -683,20 +680,20 @@
    "category": "bay",
    "label": "Bay 28",
    "bbox_xyxy": [
-    1076,
+    1077,
     1584,
     1253,
     1920
    ],
    "centroid_xy": [
-    1169.5316194407956,
-    1721.7506098705198
+    1169.5478603603603,
+    1721.775337837838
    ],
-   "M_pixels": 5329,
-   "R_pixels": 3846,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.93896484375,
-   "degradation_D": 0.27828860949521483,
+   "M_pixels": 5328,
+   "R_pixels": 3597,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.878173828125,
+   "degradation_D": 0.3248873873873874,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -707,20 +704,20 @@
    "category": "bay",
    "label": "Bay 29",
    "bbox_xyxy": [
-    1255,
+    1256,
     1584,
-    1433,
+    1432,
     1920
    ],
    "centroid_xy": [
     1343.5,
-    1723.6149222065064
+    1723.6839872746555
    ],
-   "M_pixels": 5656,
+   "M_pixels": 5658,
    "R_pixels": 5655,
-   "M_area_m2": 1.380859375,
+   "M_area_m2": 1.38134765625,
    "R_area_m2": 1.380615234375,
-   "degradation_D": 0.00017680339462522454,
+   "degradation_D": 0.0005302226935313126,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -733,18 +730,18 @@
    "bbox_xyxy": [
     1435,
     1584,
-    1612,
+    1611,
     1920
    ],
    "centroid_xy": [
-    1517.4683805592044,
-    1721.7506098705198
+    1517.4521396396397,
+    1721.775337837838
    ],
-   "M_pixels": 5329,
-   "R_pixels": 5329,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 1.301025390625,
-   "degradation_D": 0.0,
+   "M_pixels": 5328,
+   "R_pixels": 5326,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 1.30029296875,
+   "degradation_D": 0.00037537537537535304,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -761,14 +758,14 @@
     1920
    ],
    "centroid_xy": [
-    1701.9832066466324,
-    1723.6515821106593
+    1702.0,
+    1723.685577942736
    ],
-   "M_pixels": 5657,
-   "R_pixels": 121,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.029541015625,
-   "degradation_D": 0.9786105709740145,
+   "M_pixels": 5658,
+   "R_pixels": 427,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.104248046875,
+   "degradation_D": 0.924531636620714,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -785,14 +782,14 @@
     1920
    ],
    "centroid_xy": [
-    1881.0167933533676,
-    1723.6515821106593
+    1881.0,
+    1723.685577942736
    ],
-   "M_pixels": 5657,
-   "R_pixels": 1485,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.362548828125,
-   "degradation_D": 0.7374933710447233,
+   "M_pixels": 5658,
+   "R_pixels": 1999,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.488037109375,
+   "degradation_D": 0.6466949452103217,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -803,20 +800,20 @@
    "category": "bay",
    "label": "Bay 33",
    "bbox_xyxy": [
-    1972,
+    1973,
     1584,
     2149,
     1920
    ],
    "centroid_xy": [
-    2065.5316194407956,
-    1721.7506098705198
+    2065.5478603603606,
+    1721.775337837838
    ],
-   "M_pixels": 5329,
-   "R_pixels": 1632,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.3984375,
-   "degradation_D": 0.6937511728279226,
+   "M_pixels": 5328,
+   "R_pixels": 1993,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.486572265625,
+   "degradation_D": 0.6259384384384384,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -827,20 +824,20 @@
    "category": "bay",
    "label": "Bay 34",
    "bbox_xyxy": [
-    2151,
+    2152,
     1584,
-    2329,
+    2328,
     1920
    ],
    "centroid_xy": [
-    2239.380842776204,
-    1723.5331090651557
+    2239.395328260485,
+    1723.6126349318704
    ],
-   "M_pixels": 5648,
-   "R_pixels": 3851,
-   "M_area_m2": 1.37890625,
-   "R_area_m2": 0.940185546875,
-   "degradation_D": 0.3181657223796034,
+   "M_pixels": 5651,
+   "R_pixels": 3863,
+   "M_area_m2": 1.379638671875,
+   "R_area_m2": 0.943115234375,
+   "degradation_D": 0.3164041762519908,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -853,18 +850,18 @@
    "bbox_xyxy": [
     2331,
     1584,
-    2508,
+    2507,
     1920
    ],
    "centroid_xy": [
-    2413.557580311854,
-    1721.6881457824536
+    2413.541337842916,
+    1721.7128898910184
    ],
-   "M_pixels": 5323,
-   "R_pixels": 5323,
-   "M_area_m2": 1.299560546875,
-   "R_area_m2": 1.299560546875,
-   "degradation_D": 0.0,
+   "M_pixels": 5322,
+   "R_pixels": 5316,
+   "M_area_m2": 1.29931640625,
+   "R_area_m2": 1.2978515625,
+   "degradation_D": 0.0011273957158962622,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -881,13 +878,13 @@
     1920
    ],
    "centroid_xy": [
-    2597.9832066466324,
-    1723.6515821106593
+    2598.0,
+    1723.685577942736
    ],
-   "M_pixels": 5657,
-   "R_pixels": 5657,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 1.381103515625,
+   "M_pixels": 5658,
+   "R_pixels": 5658,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 1.38134765625,
    "degradation_D": 0.0,
    "grade": "I",
    "materials": [
@@ -905,14 +902,14 @@
     1920
    ],
    "centroid_xy": [
-    2777.0167933533676,
-    1723.6515821106593
+    2777.0,
+    1723.685577942736
    ],
-   "M_pixels": 5657,
-   "R_pixels": 119,
-   "M_area_m2": 1.381103515625,
-   "R_area_m2": 0.029052734375,
-   "degradation_D": 0.9789641152554357,
+   "M_pixels": 5658,
+   "R_pixels": 491,
+   "M_area_m2": 1.38134765625,
+   "R_area_m2": 0.119873046875,
+   "degradation_D": 0.9132202191587133,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -923,20 +920,20 @@
    "category": "bay",
    "label": "Bay 38",
    "bbox_xyxy": [
-    2868,
+    2869,
     1584,
     3045,
     1920
    ],
    "centroid_xy": [
-    2961.5316194407956,
-    1721.7506098705198
+    2961.5478603603606,
+    1721.775337837838
    ],
-   "M_pixels": 5329,
-   "R_pixels": 1403,
-   "M_area_m2": 1.301025390625,
-   "R_area_m2": 0.342529296875,
-   "degradation_D": 0.7367235879151811,
+   "M_pixels": 5328,
+   "R_pixels": 1816,
+   "M_area_m2": 1.30078125,
+   "R_area_m2": 0.443359375,
+   "degradation_D": 0.6591591591591592,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -948,19 +945,19 @@
    "label": "Bay 39",
    "bbox_xyxy": [
     718,
-    2329,
+    2330,
     895,
     2666
    ],
    "centroid_xy": [
     806.0,
-    2528.9207222699915
+    2528.8749354894203
    ],
-   "M_pixels": 5815,
-   "R_pixels": 1587,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.387451171875,
-   "degradation_D": 0.727085124677558,
+   "M_pixels": 5813,
+   "R_pixels": 2128,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.51953125,
+   "degradation_D": 0.6339239635300189,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -972,19 +969,19 @@
    "label": "Bay 40",
    "bbox_xyxy": [
     897,
-    2329,
+    2330,
     1074,
     2666
    ],
    "centroid_xy": [
     985.0,
-    2528.9207222699915
+    2528.8749354894203
    ],
-   "M_pixels": 5815,
-   "R_pixels": 3883,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.947998046875,
-   "degradation_D": 0.332244196044712,
+   "M_pixels": 5813,
+   "R_pixels": 3845,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.938720703125,
+   "degradation_D": 0.3385515224496818,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -995,20 +992,20 @@
    "category": "bay",
    "label": "Bay 41",
    "bbox_xyxy": [
-    1076,
-    2329,
+    1077,
+    2330,
     1253,
     2666
    ],
    "centroid_xy": [
-    1169.3739970824215,
-    2530.968818380744
+    1169.388514129444,
+    2530.993254329991
    ],
-   "M_pixels": 5484,
+   "M_pixels": 5485,
    "R_pixels": 5484,
-   "M_area_m2": 1.3388671875,
+   "M_area_m2": 1.339111328125,
    "R_area_m2": 1.3388671875,
-   "degradation_D": 0.0,
+   "degradation_D": 0.00018231540565172288,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -1019,20 +1016,20 @@
    "category": "bay",
    "label": "Bay 42",
    "bbox_xyxy": [
-    1255,
-    2329,
-    1433,
+    1256,
+    2330,
+    1432,
     2666
    ],
    "centroid_xy": [
     1343.5,
-    2528.8530626290435
+    2528.8998968008254
    ],
-   "M_pixels": 5812,
-   "R_pixels": 5809,
-   "M_area_m2": 1.4189453125,
-   "R_area_m2": 1.418212890625,
-   "degradation_D": 0.0005161734342739033,
+   "M_pixels": 5814,
+   "R_pixels": 5804,
+   "M_area_m2": 1.41943359375,
+   "R_area_m2": 1.4169921875,
+   "degradation_D": 0.0017199862401100496,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -1044,19 +1041,19 @@
    "label": "Bay 43",
    "bbox_xyxy": [
     1435,
-    2329,
-    1612,
+    2330,
+    1611,
     2666
    ],
    "centroid_xy": [
-    1517.6260029175785,
-    2530.968818380744
+    1517.611485870556,
+    2530.993254329991
    ],
-   "M_pixels": 5484,
-   "R_pixels": 84,
-   "M_area_m2": 1.3388671875,
-   "R_area_m2": 0.0205078125,
-   "degradation_D": 0.9846827133479212,
+   "M_pixels": 5485,
+   "R_pixels": 457,
+   "M_area_m2": 1.339111328125,
+   "R_area_m2": 0.111572265625,
+   "degradation_D": 0.9166818596171377,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -1068,19 +1065,19 @@
    "label": "Bay 44",
    "bbox_xyxy": [
     1614,
-    2329,
+    2330,
     1791,
     2666
    ],
    "centroid_xy": [
     1702.0,
-    2528.9207222699915
+    2528.8749354894203
    ],
-   "M_pixels": 5815,
-   "R_pixels": 1882,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.45947265625,
-   "degradation_D": 0.6763542562338779,
+   "M_pixels": 5813,
+   "R_pixels": 2342,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.57177734375,
+   "degradation_D": 0.5971099260278685,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -1092,19 +1089,19 @@
    "label": "Bay 45",
    "bbox_xyxy": [
     1793,
-    2329,
+    2330,
     1970,
     2666
    ],
    "centroid_xy": [
     1881.0,
-    2528.9207222699915
+    2528.8749354894203
    ],
-   "M_pixels": 5815,
-   "R_pixels": 1408,
-   "M_area_m2": 1.419677734375,
-   "R_area_m2": 0.34375,
-   "degradation_D": 0.7578675838349097,
+   "M_pixels": 5813,
+   "R_pixels": 1984,
+   "M_area_m2": 1.419189453125,
+   "R_area_m2": 0.484375,
+   "degradation_D": 0.6586960261482884,
    "grade": "III",
    "materials": [
     "White paint | chipped"
@@ -1115,20 +1112,20 @@
    "category": "bay",
    "label": "Bay 46",
    "bbox_xyxy": [
-    1972,
-    2329,
+    1973,
+    2330,
     2149,
     2666
    ],
    "centroid_xy": [
-    2065.3739970824217,
-    2530.968818380744
+    2065.388514129444,
+    2530.993254329991
    ],
-   "M_pixels": 5484,
-   "R_pixels": 3591,
-   "M_area_m2": 1.3388671875,
-   "R_area_m2": 0.876708984375,
-   "degradation_D": 0.3451859956236324,
+   "M_pixels": 5485,
+   "R_pixels": 3498,
+   "M_area_m2": 1.339111328125,
+   "R_area_m2": 0.85400390625,
+   "degradation_D": 0.36226071103008206,
    "grade": "II",
    "materials": [
     "White paint | faded"
@@ -1139,20 +1136,20 @@
    "category": "bay",
    "label": "Bay 47",
    "bbox_xyxy": [
-    2151,
-    2329,
-    2329,
+    2152,
+    2330,
+    2328,
     2666
    ],
    "centroid_xy": [
     2239.5,
-    2528.8530626290435
+    2528.8998968008254
    ],
-   "M_pixels": 5812,
-   "R_pixels": 5811,
-   "M_area_m2": 1.4189453125,
-   "R_area_m2": 1.418701171875,
-   "degradation_D": 0.00017205781142459742,
+   "M_pixels": 5814,
+   "R_pixels": 5812,
+   "M_area_m2": 1.41943359375,
+   "R_area_m2": 1.4189453125,
+   "degradation_D": 0.00034399724802203213,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -1164,19 +1161,19 @@
    "label": "Bay 48",
    "bbox_xyxy": [
     2331,
-    2329,
-    2508,
+    2330,
+    2507,
     2666
    ],
    "centroid_xy": [
-    2413.6260029175783,
-    2530.968818380744
+    2413.611485870556,
+    2530.993254329991
    ],
-   "M_pixels": 5484,
+   "M_pixels": 5485,
    "R_pixels": 5484,
-   "M_area_m2": 1.3388671875,
+   "M_area_m2": 1.339111328125,
    "R_area_m2": 1.3388671875,
-   "degradation_D": 0.0,
+   "degradation_D": 0.00018231540565172288,
    "grade": "I",
    "materials": [
     "White paint | recent"
@@ -1188,19 +1185,19 @@
    "label": "Bay 49",
    "bbox_xyxy": [
     2526,
-    2329,
-    2761,
+    2330,
+    2760,
     2666
    ],
    "centroid_xy": [
-    2642.5365186615186,
-    2537.506274131274
+    2642.573037323037,
+    2537.5067567567567
    ],
    "M_pixels": 6216,
-   "R_pixels": 69,
+   "R_pixels": 417,
    "M_area_m2": 1.517578125,
-   "R_area_m2": 0.016845703125,
-   "degradation_D": 0.9888996138996139,
+   "R_area_m2": 0.101806640625,
+   "degradation_D": 0.9329150579150579,
    "grade": "III",
    "materials": [
     "White paint | heavily worn"
@@ -1212,22 +1209,1990 @@
    "label": "Bay 50",
    "bbox_xyxy": [
     2827,
-    2329,
+    2330,
     3061,
     2666
    ],
    "centroid_xy": [
     2943.5,
-    2537.5467996140237
+    2537.587781350482
    ],
-   "M_pixels": 6218,
-   "R_pixels": 1769,
-   "M_area_m2": 1.51806640625,
-   "R_area_m2": 0.431884765625,
-   "degradation_D": 0.7155033772917336,
+   "M_pixels": 6220,
+   "R_pixels": 2393,
+   "M_area_m2": 1.5185546875,
+   "R_area_m2": 0.584228515625,
+   "degradation_D": 0.6152733118971061,
    "grade": "III",
    "materials": [
     "White paint | chipped"
+   ]
+  },
+  {
+   "id": 51,
+   "category": "number",
+   "label": "No. 01",
+   "bbox_xyxy": [
+    795,
+    704,
+    815,
+    721
+   ],
+   "centroid_xy": [
+    804.3859649122807,
+    711.8771929824561
+   ],
+   "M_pixels": 114,
+   "R_pixels": 4,
+   "M_area_m2": 0.02783203125,
+   "R_area_m2": 0.0009765625,
+   "degradation_D": 0.9649122807017544,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 52,
+   "category": "number",
+   "label": "No. 02",
+   "bbox_xyxy": [
+    974,
+    704,
+    997,
+    721
+   ],
+   "centroid_xy": [
+    984.7642857142857,
+    712.6928571428572
+   ],
+   "M_pixels": 140,
+   "R_pixels": 59,
+   "M_area_m2": 0.0341796875,
+   "R_area_m2": 0.014404296875,
+   "degradation_D": 0.5785714285714285,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 53,
+   "category": "number",
+   "label": "No. 03",
+   "bbox_xyxy": [
+    1153,
+    704,
+    1176,
+    721
+   ],
+   "centroid_xy": [
+    1164.2695035460993,
+    712.5460992907801
+   ],
+   "M_pixels": 141,
+   "R_pixels": 47,
+   "M_area_m2": 0.034423828125,
+   "R_area_m2": 0.011474609375,
+   "degradation_D": 0.6666666666666667,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 54,
+   "category": "number",
+   "label": "No. 04",
+   "bbox_xyxy": [
+    1332,
+    704,
+    1356,
+    721
+   ],
+   "centroid_xy": [
+    1343.2535211267605,
+    712.6478873239437
+   ],
+   "M_pixels": 142,
+   "R_pixels": 98,
+   "M_area_m2": 0.03466796875,
+   "R_area_m2": 0.02392578125,
+   "degradation_D": 0.3098591549295775,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 55,
+   "category": "number",
+   "label": "No. 05",
+   "bbox_xyxy": [
+    1512,
+    704,
+    1535,
+    721
+   ],
+   "centroid_xy": [
+    1522.804054054054,
+    712.3513513513514
+   ],
+   "M_pixels": 148,
+   "R_pixels": 148,
+   "M_area_m2": 0.0361328125,
+   "R_area_m2": 0.0361328125,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 56,
+   "category": "number",
+   "label": "No. 06",
+   "bbox_xyxy": [
+    1691,
+    704,
+    1714,
+    721
+   ],
+   "centroid_xy": [
+    1702.013071895425,
+    712.3006535947712
+   ],
+   "M_pixels": 153,
+   "R_pixels": 153,
+   "M_area_m2": 0.037353515625,
+   "R_area_m2": 0.037353515625,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 57,
+   "category": "number",
+   "label": "No. 07",
+   "bbox_xyxy": [
+    1870,
+    704,
+    1893,
+    721
+   ],
+   "centroid_xy": [
+    1879.7886178861788,
+    711.4715447154472
+   ],
+   "M_pixels": 123,
+   "R_pixels": 13,
+   "M_area_m2": 0.030029296875,
+   "R_area_m2": 0.003173828125,
+   "degradation_D": 0.8943089430894309,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 58,
+   "category": "number",
+   "label": "No. 08",
+   "bbox_xyxy": [
+    2049,
+    704,
+    2072,
+    721
+   ],
+   "centroid_xy": [
+    2060.6918238993712,
+    712.4905660377359
+   ],
+   "M_pixels": 159,
+   "R_pixels": 53,
+   "M_area_m2": 0.038818359375,
+   "R_area_m2": 0.012939453125,
+   "degradation_D": 0.6666666666666667,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 59,
+   "category": "number",
+   "label": "No. 09",
+   "bbox_xyxy": [
+    2228,
+    704,
+    2252,
+    721
+   ],
+   "centroid_xy": [
+    2239.8709677419356,
+    712.3225806451613
+   ],
+   "M_pixels": 155,
+   "R_pixels": 48,
+   "M_area_m2": 0.037841796875,
+   "R_area_m2": 0.01171875,
+   "degradation_D": 0.6903225806451613,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 60,
+   "category": "number",
+   "label": "No. 10",
+   "bbox_xyxy": [
+    2409,
+    704,
+    2431,
+    721
+   ],
+   "centroid_xy": [
+    2420.7033898305085,
+    712.042372881356
+   ],
+   "M_pixels": 118,
+   "R_pixels": 85,
+   "M_area_m2": 0.02880859375,
+   "R_area_m2": 0.020751953125,
+   "degradation_D": 0.2796610169491526,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 61,
+   "category": "number",
+   "label": "No. 11",
+   "bbox_xyxy": [
+    2588,
+    704,
+    2607,
+    721
+   ],
+   "centroid_xy": [
+    2598.3373493975905,
+    711.3253012048193
+   ],
+   "M_pixels": 83,
+   "R_pixels": 83,
+   "M_area_m2": 0.020263671875,
+   "R_area_m2": 0.020263671875,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 62,
+   "category": "number",
+   "label": "No. 12",
+   "bbox_xyxy": [
+    2767,
+    704,
+    2789,
+    721
+   ],
+   "centroid_xy": [
+    2778.691588785047,
+    712.4579439252336
+   ],
+   "M_pixels": 107,
+   "R_pixels": 107,
+   "M_area_m2": 0.026123046875,
+   "R_area_m2": 0.026123046875,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 63,
+   "category": "number",
+   "label": "No. 13",
+   "bbox_xyxy": [
+    796,
+    1175,
+    818,
+    1192
+   ],
+   "centroid_xy": [
+    807.8715596330276,
+    1182.9357798165138
+   ],
+   "M_pixels": 109,
+   "R_pixels": 9,
+   "M_area_m2": 0.026611328125,
+   "R_area_m2": 0.002197265625,
+   "degradation_D": 0.9174311926605505,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 64,
+   "category": "number",
+   "label": "No. 14",
+   "bbox_xyxy": [
+    975,
+    1175,
+    997,
+    1192
+   ],
+   "centroid_xy": [
+    986.7850467289719,
+    1183.2803738317757
+   ],
+   "M_pixels": 107,
+   "R_pixels": 39,
+   "M_area_m2": 0.026123046875,
+   "R_area_m2": 0.009521484375,
+   "degradation_D": 0.6355140186915889,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 65,
+   "category": "number",
+   "label": "No. 15",
+   "bbox_xyxy": [
+    1155,
+    1175,
+    1177,
+    1192
+   ],
+   "centroid_xy": [
+    1166.549180327869,
+    1182.9754098360656
+   ],
+   "M_pixels": 122,
+   "R_pixels": 44,
+   "M_area_m2": 0.02978515625,
+   "R_area_m2": 0.0107421875,
+   "degradation_D": 0.639344262295082,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 66,
+   "category": "number",
+   "label": "No. 16",
+   "bbox_xyxy": [
+    1334,
+    1175,
+    1356,
+    1192
+   ],
+   "centroid_xy": [
+    1345.704918032787,
+    1182.9426229508197
+   ],
+   "M_pixels": 122,
+   "R_pixels": 82,
+   "M_area_m2": 0.02978515625,
+   "R_area_m2": 0.02001953125,
+   "degradation_D": 0.3278688524590164,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 67,
+   "category": "number",
+   "label": "No. 17",
+   "bbox_xyxy": [
+    1513,
+    1175,
+    1535,
+    1192
+   ],
+   "centroid_xy": [
+    1523.5,
+    1181.5760869565217
+   ],
+   "M_pixels": 92,
+   "R_pixels": 92,
+   "M_area_m2": 0.0224609375,
+   "R_area_m2": 0.0224609375,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 68,
+   "category": "number",
+   "label": "No. 18",
+   "bbox_xyxy": [
+    1692,
+    1175,
+    1714,
+    1192
+   ],
+   "centroid_xy": [
+    1704.008,
+    1182.928
+   ],
+   "M_pixels": 125,
+   "R_pixels": 125,
+   "M_area_m2": 0.030517578125,
+   "R_area_m2": 0.030517578125,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 69,
+   "category": "number",
+   "label": "No. 19",
+   "bbox_xyxy": [
+    1871,
+    1175,
+    1893,
+    1192
+   ],
+   "centroid_xy": [
+    1883.310924369748,
+    1183.0588235294117
+   ],
+   "M_pixels": 119,
+   "R_pixels": 9,
+   "M_area_m2": 0.029052734375,
+   "R_area_m2": 0.002197265625,
+   "degradation_D": 0.9243697478991597,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 70,
+   "category": "number",
+   "label": "No. 20",
+   "bbox_xyxy": [
+    2049,
+    1175,
+    2072,
+    1192
+   ],
+   "centroid_xy": [
+    2060.5594405594406,
+    1183.6573426573427
+   ],
+   "M_pixels": 143,
+   "R_pixels": 55,
+   "M_area_m2": 0.034912109375,
+   "R_area_m2": 0.013427734375,
+   "degradation_D": 0.6153846153846154,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 71,
+   "category": "number",
+   "label": "No. 21",
+   "bbox_xyxy": [
+    2228,
+    1175,
+    2249,
+    1192
+   ],
+   "centroid_xy": [
+    2238.451327433628,
+    1183.212389380531
+   ],
+   "M_pixels": 113,
+   "R_pixels": 35,
+   "M_area_m2": 0.027587890625,
+   "R_area_m2": 0.008544921875,
+   "degradation_D": 0.6902654867256637,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 72,
+   "category": "number",
+   "label": "No. 22",
+   "bbox_xyxy": [
+    2407,
+    1175,
+    2431,
+    1192
+   ],
+   "centroid_xy": [
+    2418.8518518518517,
+    1184.1555555555556
+   ],
+   "M_pixels": 135,
+   "R_pixels": 100,
+   "M_area_m2": 0.032958984375,
+   "R_area_m2": 0.0244140625,
+   "degradation_D": 0.2592592592592593,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 73,
+   "category": "number",
+   "label": "No. 23",
+   "bbox_xyxy": [
+    2586,
+    1175,
+    2610,
+    1192
+   ],
+   "centroid_xy": [
+    2598.3383458646617,
+    1183.6917293233082
+   ],
+   "M_pixels": 133,
+   "R_pixels": 133,
+   "M_area_m2": 0.032470703125,
+   "R_area_m2": 0.032470703125,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 74,
+   "category": "number",
+   "label": "No. 24",
+   "bbox_xyxy": [
+    2766,
+    1175,
+    2789,
+    1192
+   ],
+   "centroid_xy": [
+    2776.927536231884,
+    1183.804347826087
+   ],
+   "M_pixels": 138,
+   "R_pixels": 138,
+   "M_area_m2": 0.03369140625,
+   "R_area_m2": 0.03369140625,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 75,
+   "category": "number",
+   "label": "No. 25",
+   "bbox_xyxy": [
+    2945,
+    1175,
+    2969,
+    1192
+   ],
+   "centroid_xy": [
+    2956.858108108108,
+    1183.7635135135135
+   ],
+   "M_pixels": 148,
+   "R_pixels": 13,
+   "M_area_m2": 0.0361328125,
+   "R_area_m2": 0.003173828125,
+   "degradation_D": 0.9121621621621622,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 76,
+   "category": "number",
+   "label": "No. 26",
+   "bbox_xyxy": [
+    795,
+    1882,
+    818,
+    1899
+   ],
+   "centroid_xy": [
+    806.3112582781457,
+    1889.8344370860927
+   ],
+   "M_pixels": 151,
+   "R_pixels": 47,
+   "M_area_m2": 0.036865234375,
+   "R_area_m2": 0.011474609375,
+   "degradation_D": 0.6887417218543046,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 77,
+   "category": "number",
+   "label": "No. 27",
+   "bbox_xyxy": [
+    974,
+    1882,
+    997,
+    1898
+   ],
+   "centroid_xy": [
+    984.3898305084746,
+    1888.7711864406779
+   ],
+   "M_pixels": 118,
+   "R_pixels": 36,
+   "M_area_m2": 0.02880859375,
+   "R_area_m2": 0.0087890625,
+   "degradation_D": 0.6949152542372881,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 78,
+   "category": "number",
+   "label": "No. 28",
+   "bbox_xyxy": [
+    1153,
+    1882,
+    1176,
+    1899
+   ],
+   "centroid_xy": [
+    1164.8344370860927,
+    1889.8940397350993
+   ],
+   "M_pixels": 151,
+   "R_pixels": 113,
+   "M_area_m2": 0.036865234375,
+   "R_area_m2": 0.027587890625,
+   "degradation_D": 0.2516556291390728,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 79,
+   "category": "number",
+   "label": "No. 29",
+   "bbox_xyxy": [
+    1332,
+    1882,
+    1356,
+    1899
+   ],
+   "centroid_xy": [
+    1344.121794871795,
+    1889.7948717948718
+   ],
+   "M_pixels": 156,
+   "R_pixels": 156,
+   "M_area_m2": 0.0380859375,
+   "R_area_m2": 0.0380859375,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 80,
+   "category": "number",
+   "label": "No. 30",
+   "bbox_xyxy": [
+    1512,
+    1882,
+    1535,
+    1899
+   ],
+   "centroid_xy": [
+    1523.3714285714286,
+    1889.6642857142858
+   ],
+   "M_pixels": 140,
+   "R_pixels": 140,
+   "M_area_m2": 0.0341796875,
+   "R_area_m2": 0.0341796875,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 81,
+   "category": "number",
+   "label": "No. 31",
+   "bbox_xyxy": [
+    1691,
+    1882,
+    1711,
+    1899
+   ],
+   "centroid_xy": [
+    1701.3921568627452,
+    1889.0980392156862
+   ],
+   "M_pixels": 102,
+   "R_pixels": 7,
+   "M_area_m2": 0.02490234375,
+   "R_area_m2": 0.001708984375,
+   "degradation_D": 0.9313725490196079,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 82,
+   "category": "number",
+   "label": "No. 32",
+   "bbox_xyxy": [
+    1870,
+    1882,
+    1893,
+    1899
+   ],
+   "centroid_xy": [
+    1881.7769784172663,
+    1889.9712230215828
+   ],
+   "M_pixels": 139,
+   "R_pixels": 52,
+   "M_area_m2": 0.033935546875,
+   "R_area_m2": 0.0126953125,
+   "degradation_D": 0.6258992805755396,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 83,
+   "category": "number",
+   "label": "No. 33",
+   "bbox_xyxy": [
+    2049,
+    1882,
+    2072,
+    1899
+   ],
+   "centroid_xy": [
+    2060.809523809524,
+    1889.7380952380952
+   ],
+   "M_pixels": 126,
+   "R_pixels": 47,
+   "M_area_m2": 0.03076171875,
+   "R_area_m2": 0.011474609375,
+   "degradation_D": 0.626984126984127,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 84,
+   "category": "number",
+   "label": "No. 34",
+   "bbox_xyxy": [
+    2228,
+    1882,
+    2252,
+    1899
+   ],
+   "centroid_xy": [
+    2239.3937007874015,
+    1889.9448818897638
+   ],
+   "M_pixels": 127,
+   "R_pixels": 87,
+   "M_area_m2": 0.031005859375,
+   "R_area_m2": 0.021240234375,
+   "degradation_D": 0.31496062992125984,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 85,
+   "category": "number",
+   "label": "No. 35",
+   "bbox_xyxy": [
+    2408,
+    1882,
+    2431,
+    1899
+   ],
+   "centroid_xy": [
+    2419.3357142857144,
+    1889.8214285714287
+   ],
+   "M_pixels": 140,
+   "R_pixels": 140,
+   "M_area_m2": 0.0341796875,
+   "R_area_m2": 0.0341796875,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 86,
+   "category": "number",
+   "label": "No. 36",
+   "bbox_xyxy": [
+    2587,
+    1882,
+    2610,
+    1899
+   ],
+   "centroid_xy": [
+    2599.020979020979,
+    1889.6293706293707
+   ],
+   "M_pixels": 143,
+   "R_pixels": 143,
+   "M_area_m2": 0.034912109375,
+   "R_area_m2": 0.034912109375,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 87,
+   "category": "number",
+   "label": "No. 37",
+   "bbox_xyxy": [
+    2766,
+    1882,
+    2789,
+    1899
+   ],
+   "centroid_xy": [
+    2776.8389830508477,
+    1888.7457627118645
+   ],
+   "M_pixels": 118,
+   "R_pixels": 7,
+   "M_area_m2": 0.02880859375,
+   "R_area_m2": 0.001708984375,
+   "degradation_D": 0.940677966101695,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 88,
+   "category": "number",
+   "label": "No. 38",
+   "bbox_xyxy": [
+    2945,
+    1882,
+    2968,
+    1899
+   ],
+   "centroid_xy": [
+    2957.326530612245,
+    1889.7823129251701
+   ],
+   "M_pixels": 147,
+   "R_pixels": 54,
+   "M_area_m2": 0.035888671875,
+   "R_area_m2": 0.01318359375,
+   "degradation_D": 0.6326530612244898,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 89,
+   "category": "number",
+   "label": "No. 39",
+   "bbox_xyxy": [
+    795,
+    2353,
+    818,
+    2370
+   ],
+   "centroid_xy": [
+    807.2312925170068,
+    2360.7414965986395
+   ],
+   "M_pixels": 147,
+   "R_pixels": 48,
+   "M_area_m2": 0.035888671875,
+   "R_area_m2": 0.01171875,
+   "degradation_D": 0.6734693877551021,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 90,
+   "category": "number",
+   "label": "No. 40",
+   "bbox_xyxy": [
+    973,
+    2353,
+    997,
+    2370
+   ],
+   "centroid_xy": [
+    985.4609929078014,
+    2361.0851063829787
+   ],
+   "M_pixels": 141,
+   "R_pixels": 96,
+   "M_area_m2": 0.034423828125,
+   "R_area_m2": 0.0234375,
+   "degradation_D": 0.3191489361702128,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 91,
+   "category": "number",
+   "label": "No. 41",
+   "bbox_xyxy": [
+    1152,
+    2353,
+    1173,
+    2369
+   ],
+   "centroid_xy": [
+    1162.8073394495414,
+    2360.761467889908
+   ],
+   "M_pixels": 109,
+   "R_pixels": 109,
+   "M_area_m2": 0.026611328125,
+   "R_area_m2": 0.026611328125,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 92,
+   "category": "number",
+   "label": "No. 42",
+   "bbox_xyxy": [
+    1332,
+    2353,
+    1355,
+    2369
+   ],
+   "centroid_xy": [
+    1343.6716417910447,
+    2360.9850746268658
+   ],
+   "M_pixels": 134,
+   "R_pixels": 134,
+   "M_area_m2": 0.03271484375,
+   "R_area_m2": 0.03271484375,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 93,
+   "category": "number",
+   "label": "No. 43",
+   "bbox_xyxy": [
+    1511,
+    2353,
+    1535,
+    2370
+   ],
+   "centroid_xy": [
+    1523.2611940298507,
+    2361.10447761194
+   ],
+   "M_pixels": 134,
+   "R_pixels": 9,
+   "M_area_m2": 0.03271484375,
+   "R_area_m2": 0.002197265625,
+   "degradation_D": 0.9328358208955224,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 94,
+   "category": "number",
+   "label": "No. 44",
+   "bbox_xyxy": [
+    1690,
+    2353,
+    1714,
+    2369
+   ],
+   "centroid_xy": [
+    1702.1555555555556,
+    2361.1481481481483
+   ],
+   "M_pixels": 135,
+   "R_pixels": 51,
+   "M_area_m2": 0.032958984375,
+   "R_area_m2": 0.012451171875,
+   "degradation_D": 0.6222222222222222,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 95,
+   "category": "number",
+   "label": "No. 45",
+   "bbox_xyxy": [
+    1869,
+    2353,
+    1893,
+    2370
+   ],
+   "centroid_xy": [
+    1881.4326241134752,
+    2360.921985815603
+   ],
+   "M_pixels": 141,
+   "R_pixels": 47,
+   "M_area_m2": 0.034423828125,
+   "R_area_m2": 0.011474609375,
+   "degradation_D": 0.6666666666666667,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 96,
+   "category": "number",
+   "label": "No. 46",
+   "bbox_xyxy": [
+    2048,
+    2353,
+    2072,
+    2370
+   ],
+   "centroid_xy": [
+    2060.9025974025976,
+    2361.090909090909
+   ],
+   "M_pixels": 154,
+   "R_pixels": 109,
+   "M_area_m2": 0.03759765625,
+   "R_area_m2": 0.026611328125,
+   "degradation_D": 0.29220779220779225,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 97,
+   "category": "number",
+   "label": "No. 47",
+   "bbox_xyxy": [
+    2228,
+    2353,
+    2252,
+    2369
+   ],
+   "centroid_xy": [
+    2238.983333333333,
+    2359.75
+   ],
+   "M_pixels": 120,
+   "R_pixels": 120,
+   "M_area_m2": 0.029296875,
+   "R_area_m2": 0.029296875,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 98,
+   "category": "number",
+   "label": "No. 48",
+   "bbox_xyxy": [
+    2407,
+    2353,
+    2431,
+    2370
+   ],
+   "centroid_xy": [
+    2419.532894736842,
+    2361.0394736842104
+   ],
+   "M_pixels": 152,
+   "R_pixels": 152,
+   "M_area_m2": 0.037109375,
+   "R_area_m2": 0.037109375,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 99,
+   "category": "number",
+   "label": "No. 49",
+   "bbox_xyxy": [
+    2631,
+    2353,
+    2655,
+    2370
+   ],
+   "centroid_xy": [
+    2643.4520547945203,
+    2360.8424657534247
+   ],
+   "M_pixels": 146,
+   "R_pixels": 8,
+   "M_area_m2": 0.03564453125,
+   "R_area_m2": 0.001953125,
+   "degradation_D": 0.9452054794520548,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 100,
+   "category": "number",
+   "label": "No. 50",
+   "bbox_xyxy": [
+    2932,
+    2353,
+    2956,
+    2370
+   ],
+   "centroid_xy": [
+    2943.4563758389263,
+    2360.8724832214766
+   ],
+   "M_pixels": 149,
+   "R_pixels": 60,
+   "M_area_m2": 0.036376953125,
+   "R_area_m2": 0.0146484375,
+   "degradation_D": 0.5973154362416108,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 101,
+   "category": "arrow",
+   "label": "Arrow 1",
+   "bbox_xyxy": [
+    470,
+    816,
+    554,
+    975
+   ],
+   "centroid_xy": [
+    511.5,
+    904.1372464393612
+   ],
+   "M_pixels": 4634,
+   "R_pixels": 1645,
+   "M_area_m2": 1.13134765625,
+   "R_area_m2": 0.401611328125,
+   "degradation_D": 0.6450151057401813,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 102,
+   "category": "arrow",
+   "label": "Arrow 2",
+   "bbox_xyxy": [
+    3414,
+    817,
+    3498,
+    976
+   ],
+   "centroid_xy": [
+    3455.5,
+    886.8627535606388
+   ],
+   "M_pixels": 4634,
+   "R_pixels": 2843,
+   "M_area_m2": 1.13134765625,
+   "R_area_m2": 0.694091796875,
+   "degradation_D": 0.38649115235217957,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 103,
+   "category": "arrow",
+   "label": "Arrow 3",
+   "bbox_xyxy": [
+    944,
+    905,
+    1104,
+    989
+   ],
+   "centroid_xy": [
+    1015.7519035532995,
+    946.8102791878173
+   ],
+   "M_pixels": 4728,
+   "R_pixels": 3168,
+   "M_area_m2": 1.154296875,
+   "R_area_m2": 0.7734375,
+   "degradation_D": 0.3299492385786802,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 104,
+   "category": "arrow",
+   "label": "Arrow 4",
+   "bbox_xyxy": [
+    1648,
+    905,
+    1808,
+    989
+   ],
+   "centroid_xy": [
+    1719.7519035532996,
+    946.8102791878173
+   ],
+   "M_pixels": 4728,
+   "R_pixels": 1665,
+   "M_area_m2": 1.154296875,
+   "R_area_m2": 0.406494140625,
+   "degradation_D": 0.6478426395939086,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 105,
+   "category": "arrow",
+   "label": "Arrow 5",
+   "bbox_xyxy": [
+    2416,
+    905,
+    2576,
+    989
+   ],
+   "centroid_xy": [
+    2487.7519035532996,
+    946.8102791878173
+   ],
+   "M_pixels": 4728,
+   "R_pixels": 1784,
+   "M_area_m2": 1.154296875,
+   "R_area_m2": 0.435546875,
+   "degradation_D": 0.622673434856176,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 106,
+   "category": "arrow",
+   "label": "Arrow 6",
+   "bbox_xyxy": [
+    470,
+    1648,
+    554,
+    1807
+   ],
+   "centroid_xy": [
+    511.5,
+    1736.1372464393612
+   ],
+   "M_pixels": 4634,
+   "R_pixels": 1903,
+   "M_area_m2": 1.13134765625,
+   "R_area_m2": 0.464599609375,
+   "degradation_D": 0.5893396633577903,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 107,
+   "category": "arrow",
+   "label": "Arrow 7",
+   "bbox_xyxy": [
+    3414,
+    1649,
+    3498,
+    1808
+   ],
+   "centroid_xy": [
+    3455.5,
+    1718.8627535606388
+   ],
+   "M_pixels": 4634,
+   "R_pixels": 3242,
+   "M_area_m2": 1.13134765625,
+   "R_area_m2": 0.79150390625,
+   "degradation_D": 0.30038843331894693,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 108,
+   "category": "arrow",
+   "label": "Arrow 8",
+   "bbox_xyxy": [
+    944,
+    2083,
+    1104,
+    2167
+   ],
+   "centroid_xy": [
+    1031.2480964467004,
+    2124.1897208121827
+   ],
+   "M_pixels": 4728,
+   "R_pixels": 4726,
+   "M_area_m2": 1.154296875,
+   "R_area_m2": 1.15380859375,
+   "degradation_D": 0.0004230118443316888,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 109,
+   "category": "arrow",
+   "label": "Arrow 9",
+   "bbox_xyxy": [
+    1648,
+    2083,
+    1808,
+    2167
+   ],
+   "centroid_xy": [
+    1735.6240665671005,
+    2124.2594410070406
+   ],
+   "M_pixels": 4687,
+   "R_pixels": 366,
+   "M_area_m2": 1.144287109375,
+   "R_area_m2": 0.08935546875,
+   "degradation_D": 0.921911670578195,
+   "grade": "III",
+   "materials": [
+    "White paint | heavily worn"
+   ]
+  },
+  {
+   "id": 110,
+   "category": "arrow",
+   "label": "Arrow 10",
+   "bbox_xyxy": [
+    2416,
+    2083,
+    2576,
+    2167
+   ],
+   "centroid_xy": [
+    2503.2480964467004,
+    2124.1897208121827
+   ],
+   "M_pixels": 4728,
+   "R_pixels": 3024,
+   "M_area_m2": 1.154296875,
+   "R_area_m2": 0.73828125,
+   "degradation_D": 0.36040609137055835,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 111,
+   "category": "arrow",
+   "label": "Arrow 11",
+   "bbox_xyxy": [
+    470,
+    2352,
+    554,
+    2511
+   ],
+   "centroid_xy": [
+    511.5,
+    2440.137246439361
+   ],
+   "M_pixels": 4634,
+   "R_pixels": 1640,
+   "M_area_m2": 1.13134765625,
+   "R_area_m2": 0.400390625,
+   "degradation_D": 0.6460940871817005,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 112,
+   "category": "arrow",
+   "label": "Arrow 12",
+   "bbox_xyxy": [
+    3414,
+    2353,
+    3498,
+    2512
+   ],
+   "centroid_xy": [
+    3455.5,
+    2422.862753560639
+   ],
+   "M_pixels": 4634,
+   "R_pixels": 2856,
+   "M_area_m2": 1.13134765625,
+   "R_area_m2": 0.697265625,
+   "degradation_D": 0.38368580060422963,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 113,
+   "category": "arrow",
+   "label": "Arrow 13",
+   "bbox_xyxy": [
+    3296,
+    2654,
+    3360,
+    2774
+   ],
+   "centroid_xy": [
+    3327.5,
+    2707.183431952663
+   ],
+   "M_pixels": 2704,
+   "R_pixels": 2703,
+   "M_area_m2": 0.66015625,
+   "R_area_m2": 0.659912109375,
+   "degradation_D": 0.00036982248520711636,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 114,
+   "category": "arrow",
+   "label": "Arrow 14",
+   "bbox_xyxy": [
+    3552,
+    2653,
+    3616,
+    2774
+   ],
+   "centroid_xy": [
+    3583.522312766783,
+    2717.178502134265
+   ],
+   "M_pixels": 2577,
+   "R_pixels": 993,
+   "M_area_m2": 0.629150390625,
+   "R_area_m2": 0.242431640625,
+   "degradation_D": 0.6146682188591386,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 115,
+   "category": "text",
+   "label": "駐車禁止",
+   "bbox_xyxy": [
+    3020,
+    559,
+    3111,
+    581
+   ],
+   "centroid_xy": [
+    3059.665693430657,
+    569.7197080291971
+   ],
+   "M_pixels": 685,
+   "R_pixels": 562,
+   "M_area_m2": 0.167236328125,
+   "R_area_m2": 0.13720703125,
+   "degradation_D": 0.17956204379562046,
+   "grade": "I",
+   "materials": [
+    "Amber paint | wear 1"
+   ]
+  },
+  {
+   "id": 116,
+   "category": "text",
+   "label": "徐行",
+   "bbox_xyxy": [
+    1363,
+    926,
+    1453,
+    970
+   ],
+   "centroid_xy": [
+    1402.3801369863013,
+    947.2097602739726
+   ],
+   "M_pixels": 1168,
+   "R_pixels": 453,
+   "M_area_m2": 0.28515625,
+   "R_area_m2": 0.110595703125,
+   "degradation_D": 0.6121575342465753,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 117,
+   "category": "text",
+   "label": "徐行",
+   "bbox_xyxy": [
+    2066,
+    2104,
+    2157,
+    2147
+   ],
+   "centroid_xy": [
+    2106.118686868687,
+    2124.6952861952864
+   ],
+   "M_pixels": 1188,
+   "R_pixels": 831,
+   "M_area_m2": 0.2900390625,
+   "R_area_m2": 0.202880859375,
+   "degradation_D": 0.3005050505050505,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 118,
+   "category": "text",
+   "label": "優先",
+   "bbox_xyxy": [
+    2621,
+    2592,
+    2664,
+    2612
+   ],
+   "centroid_xy": [
+    2639.1800643086817,
+    2601.8295819935693
+   ],
+   "M_pixels": 311,
+   "R_pixels": 197,
+   "M_area_m2": 0.075927734375,
+   "R_area_m2": 0.048095703125,
+   "degradation_D": 0.3665594855305466,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 119,
+   "category": "text",
+   "label": "優先",
+   "bbox_xyxy": [
+    2922,
+    2592,
+    2965,
+    2612
+   ],
+   "centroid_xy": [
+    2939.958064516129,
+    2601.8322580645163
+   ],
+   "M_pixels": 310,
+   "R_pixels": 310,
+   "M_area_m2": 0.07568359375,
+   "R_area_m2": 0.07568359375,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 120,
+   "category": "text",
+   "label": "止まれ",
+   "bbox_xyxy": [
+    3540,
+    2599,
+    3628,
+    2624
+   ],
+   "centroid_xy": [
+    3584.5330188679245,
+    2612.710691823899
+   ],
+   "M_pixels": 636,
+   "R_pixels": 228,
+   "M_area_m2": 0.1552734375,
+   "R_area_m2": 0.0556640625,
+   "degradation_D": 0.6415094339622642,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 121,
+   "category": "text",
+   "label": "出口",
+   "bbox_xyxy": [
+    3555,
+    2743,
+    3612,
+    2774
+   ],
+   "centroid_xy": [
+    3582.079522862823,
+    2759.306163021869
+   ],
+   "M_pixels": 503,
+   "R_pixels": 178,
+   "M_area_m2": 0.122802734375,
+   "R_area_m2": 0.04345703125,
+   "degradation_D": 0.6461232604373757,
+   "grade": "III",
+   "materials": [
+    "White paint | chipped"
+   ]
+  },
+  {
+   "id": 122,
+   "category": "text",
+   "label": "入口",
+   "bbox_xyxy": [
+    3296,
+    2803,
+    3357,
+    2831
+   ],
+   "centroid_xy": [
+    3330.162094763092,
+    2817.655860349127
+   ],
+   "M_pixels": 401,
+   "R_pixels": 401,
+   "M_area_m2": 0.097900390625,
+   "R_area_m2": 0.097900390625,
+   "degradation_D": 0.0,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 123,
+   "category": "hatch",
+   "label": "Hatched area 1",
+   "bbox_xyxy": [
+    2765,
+    2326,
+    2826,
+    2666
+   ],
+   "centroid_xy": [
+    2795.750689655172,
+    2495.17183908046
+   ],
+   "M_pixels": 8700,
+   "R_pixels": 6706,
+   "M_area_m2": 2.1240234375,
+   "R_area_m2": 1.63720703125,
+   "degradation_D": 0.2291954022988506,
+   "grade": "I",
+   "materials": [
+    "Amber paint | wear 1"
+   ]
+  },
+  {
+   "id": 124,
+   "category": "hatch",
+   "label": "Hatched area 2",
+   "bbox_xyxy": [
+    3094,
+    2307,
+    3216,
+    2678
+   ],
+   "centroid_xy": [
+    3153.4163034285343,
+    2490.6285862988743
+   ],
+   "M_pixels": 15371,
+   "R_pixels": 3411,
+   "M_area_m2": 3.752685546875,
+   "R_area_m2": 0.832763671875,
+   "degradation_D": 0.7780886084184503,
+   "grade": "III",
+   "materials": [
+    "Amber paint | wear 2"
+   ]
+  },
+  {
+   "id": 125,
+   "category": "hatch",
+   "label": "Hatched area 3",
+   "bbox_xyxy": [
+    2954,
+    406,
+    3178,
+    733
+   ],
+   "centroid_xy": [
+    3066.7581809325598,
+    569.0322366381791
+   ],
+   "M_pixels": 22583,
+   "R_pixels": 17593,
+   "M_area_m2": 5.513427734375,
+   "R_area_m2": 4.295166015625,
+   "degradation_D": 0.22096267103573486,
+   "grade": "I",
+   "materials": [
+    "Amber paint | wear 1"
+   ]
+  },
+  {
+   "id": 126,
+   "category": "symbol",
+   "label": "Wheelchair symbol A",
+   "bbox_xyxy": [
+    2599,
+    2429,
+    2697,
+    2549
+   ],
+   "centroid_xy": [
+    2645.3370462046205,
+    2499.179867986799
+   ],
+   "M_pixels": 2424,
+   "R_pixels": 2422,
+   "M_area_m2": 0.591796875,
+   "R_area_m2": 0.59130859375,
+   "degradation_D": 0.0008250825082508628,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 127,
+   "category": "symbol",
+   "label": "Wheelchair symbol B",
+   "bbox_xyxy": [
+    2899,
+    2429,
+    2998,
+    2548
+   ],
+   "centroid_xy": [
+    2945.99837398374,
+    2498.886991869919
+   ],
+   "M_pixels": 2460,
+   "R_pixels": 2459,
+   "M_area_m2": 0.6005859375,
+   "R_area_m2": 0.600341796875,
+   "degradation_D": 0.00040650406504061376,
+   "grade": "I",
+   "materials": [
+    "White paint | recent"
+   ]
+  },
+  {
+   "id": 128,
+   "category": "surface",
+   "label": "Accessible bay surface A",
+   "bbox_xyxy": [
+    2533,
+    2330,
+    2753,
+    2659
+   ],
+   "centroid_xy": [
+    2642.404748660597,
+    2491.510715226747
+   ],
+   "M_pixels": 68314,
+   "R_pixels": 67653,
+   "M_area_m2": 16.67822265625,
+   "R_area_m2": 16.516845703125,
+   "degradation_D": 0.009675908305764591,
+   "grade": "I",
+   "materials": [
+    "Faded blue accessible surfacing"
+   ]
+  },
+  {
+   "id": 129,
+   "category": "surface",
+   "label": "Accessible bay surface B",
+   "bbox_xyxy": [
+    2834,
+    2330,
+    3054,
+    2659
+   ],
+   "centroid_xy": [
+    2943.4261610791336,
+    2491.526224057882
+   ],
+   "M_pixels": 68277,
+   "R_pixels": 67647,
+   "M_area_m2": 16.669189453125,
+   "R_area_m2": 16.515380859375,
+   "degradation_D": 0.009227118941957047,
+   "grade": "I",
+   "materials": [
+    "Faded blue accessible surfacing"
+   ]
+  },
+  {
+   "id": 130,
+   "category": "crossing",
+   "label": "Pedestrian crossing",
+   "bbox_xyxy": [
+    3212,
+    2896,
+    3719,
+    2942
+   ],
+   "centroid_xy": [
+    3487.20217878885,
+    2918.8774431272027
+   ],
+   "M_pixels": 12484,
+   "R_pixels": 8595,
+   "M_area_m2": 3.0478515625,
+   "R_area_m2": 2.098388671875,
+   "degradation_D": 0.31151874399231017,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
+   ]
+  },
+  {
+   "id": 131,
+   "category": "line",
+   "label": "Access lane centre",
+   "bbox_xyxy": [
+    3452,
+    2554,
+    3460,
+    2896
+   ],
+   "centroid_xy": [
+    3455.5,
+    2724.5
+   ],
+   "M_pixels": 2736,
+   "R_pixels": 2153,
+   "M_area_m2": 0.66796875,
+   "R_area_m2": 0.525634765625,
+   "degradation_D": 0.21308479532163738,
+   "grade": "I",
+   "materials": [
+    "Amber paint | wear 1"
+   ]
+  },
+  {
+   "id": 132,
+   "category": "line",
+   "label": "Exit stop line",
+   "bbox_xyxy": [
+    3501,
+    2826,
+    3712,
+    2845
+   ],
+   "centroid_xy": [
+    3606.0,
+    2835.0
+   ],
+   "M_pixels": 4009,
+   "R_pixels": 2505,
+   "M_area_m2": 0.978759765625,
+   "R_area_m2": 0.611572265625,
+   "degradation_D": 0.37515589922673986,
+   "grade": "II",
+   "materials": [
+    "White paint | faded"
    ]
   }
  ]

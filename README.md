@@ -19,11 +19,11 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 From a single UAV orthophoto of a parking lot, this code produces a **degradation index D** for every region, a **spatial heat map**, and a **maintenance grade** with its **measurement uncertainty**. It works in two steps. First it *recovers* the original footprint of every marking, including segments whose paint has worn away. Then it *measures* the paint that still remains inside that footprint.
 
-> **[▶ Try the interactive demo](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/)**: hover over a parking bay to see its original footprint *M*, its residual paint *R*, the index *D* and the maintenance grade.
+> **[▶ Try the interactive demo](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/)**: hover over any pavement marking to see its original footprint *M*, its residual paint *R*, the index *D* and the maintenance grade.
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 
-The demo scene is a parking lot modelled and rendered in Blender. Its masks and values come from the scene geometry and paint material, so they are a synthetic reference, not predictions of the model. Each value is computed over one complete bay outline.
+The demo scene is a parking lot modelled and rendered in Blender. Its masks and values come from the scene geometry and paint material, so they are a synthetic reference, not predictions of the model. Every marking in the scene counts (bay lines, numbers, arrows, text, hatching, wheelchair symbols, crossing, stop/lane lines and the blue accessible-bay surfacing: 132 in all), and each value is computed over one complete marking. R is taken at pixel centres, without anti-aliasing.
 
 ## Pipeline
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recover-then-Measure · Interactive demo</title>
-<meta name="description" content="Hover a parking bay to see its original marking footprint M, its residual paint R, the degradation index D and the maintenance grade.">
+<meta name="description" content="Hover any pavement marking to see its original footprint M, its residual paint R, the degradation index D and the maintenance grade.">
 <link rel="preload" href="assets/topdown_rgb.webp" as="fetch" crossorigin>
 <style>
 :root{
@@ -79,7 +79,7 @@ footer{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--mute
       <div>
         <span class="tag" data-i18n="tag">Blender synthetic scene</span>
         <h1 data-i18n="title">Recover-then-Measure</h1>
-        <p data-i18n="subtitle">Hover a parking bay: the original marking footprint is recovered, the paint that remains is measured, and the bay is graded for maintenance.</p>
+        <p data-i18n="subtitle">Hover any marking (bay line, number, arrow, text, hatching, symbol, crossing): its original footprint is recovered, the paint that remains is measured, and the marking is graded for maintenance.</p>
       </div>
       <nav class="langs" aria-label="Language" id="langs"></nav>
     </div>
@@ -103,13 +103,13 @@ footer{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--mute
           </div>
         </div>
       </div>
-      <p class="note" data-i18n="note">Rendered in Blender: no survey imagery is used. M and R come from the scene geometry and paint material, so the values here are a synthetic reference, not model predictions. Each value is computed over one complete bay outline.</p>
+      <p class="note" data-i18n="note">Rendered in Blender: no survey imagery is used. M and R come from the scene geometry and paint material, so the values here are a synthetic reference, not model predictions. Each value is computed over one complete marking; the blue accessible-bay surfacing counts as a marking too.</p>
     </section>
 
     <aside>
       <div class="card">
-        <h2 data-i18n="selected">Selected bay</h2>
-        <div id="sel"><p class="empty" data-i18n="hint">Move the pointer over a parking bay (or tap it).</p></div>
+        <h2 data-i18n="selected">Selected marking</h2>
+        <div id="sel"><p class="empty" data-i18n="hint">Move the pointer over any marking (or tap it).</p></div>
       </div>
       <div class="card">
         <h2 data-i18n="howTitle">How D is measured</h2>
@@ -136,55 +136,55 @@ footer{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--mute
 "use strict";
 const I18N = {
  en:{name:"English",cat:{bay:"Bay outline",number:"Bay number",arrow:"Arrow",text:"Text marking",hatch:"Hatched area",symbol:"Wheelchair symbol",surface:"Accessible bay surface",crossing:"Pedestrian crossing",line:"Line"},tag:"Blender synthetic scene",title:"Recover-then-Measure",
-  subtitle:"Hover a parking bay: the original marking footprint is recovered, the paint that remains is measured, and the bay is graded for maintenance.",
+  subtitle:"Hover any marking (bay line, number, arrow, text, hatching, symbol, crossing): its original footprint is recovered, the paint that remains is measured, and the marking is graded for maintenance.",
   showAll:"Show all overlays",gradeMap:"Grade map",legM:"Original footprint M",legR:"Residual paint R",
-  note:"Rendered in Blender: no survey imagery is used. M and R come from the scene geometry and paint material, so the values here are a synthetic reference, not model predictions. Each value is computed over one complete bay outline.",
-  selected:"Selected bay",hint:"Move the pointer over a parking bay (or tap it).",howTitle:"How D is measured",
+  note:"Rendered in Blender: no survey imagery is used. M and R come from the scene geometry and paint material, so the values here are a synthetic reference, not model predictions. Each value is computed over one complete marking; the blue accessible-bay surfacing counts as a marking too.",
+  selected:"Selected marking",hint:"Move the pointer over any marking (or tap it).",howTitle:"How D is measured",
   how:"Stage 1 recovers the original footprint M, including segments that have worn away; Stage 2 finds the paint R still visible inside it. D is the share of the footprint that has lost its paint.",
   sceneTitle:"Whole scene",areaWeighted:"area-weighted D",paper:"Paper: Recover-then-Measure (Measurement).",code:"Code on GitHub",weights:"Model weights on Zenodo",
   bay:"Bay",wear:"degradation index",coverage:"Residual coverage Q",footprint:"Footprint |M|",residual:"Residual |R ∩ M|",rank:"Handbook rank",
   rgb:"RGB",grades:["Grade I","Grade II","Grade III"],actions:["Routine inspection","Schedule repainting","Repaint with priority"],bays:"Markings",loading:"Loading…"},
  zh:{name:"中文",cat:{bay:"车位线",number:"车位编号",arrow:"箭头",text:"文字标线",hatch:"斜线禁停区",symbol:"轮椅标志",surface:"无障碍车位涂装",crossing:"人行横道",line:"标线"},tag:"Blender 合成场景",title:"先恢复，再测量",
-  subtitle:"鼠标划过车位：恢复标线的原始区域，测量仍然残留的漆料，并给出维护等级。",
+  subtitle:"鼠标划过任意标线（车位线、编号、箭头、文字、斜线区、轮椅标志、人行横道）：恢复其原始区域，测量仍然残留的漆料，并给出维护等级。",
   showAll:"显示全部叠加",gradeMap:"等级地图",legM:"原始标线区域 M",legR:"残留漆料 R",
-  note:"本场景由 Blender 渲染，不含任何实测影像。M 和 R 来自场景几何与漆料材质，因此这里的数值是合成参考值，并非模型预测。每个数值按一个完整车位轮廓计算。",
-  selected:"当前车位",hint:"将鼠标移到任意车位上（触屏可点按）。",howTitle:"D 的计算方式",
+  note:"本场景由 Blender 渲染，不含任何实测影像。M 和 R 来自场景几何与漆料材质，因此这里的数值是合成参考值，并非模型预测。每个数值按一个完整标线计算，蓝色无障碍车位涂装同样计入。",
+  selected:"当前标线",hint:"将鼠标移到任意标线上（触屏可点按）。",howTitle:"D 的计算方式",
   how:"第一阶段恢复标线的原始区域 M（包括已磨掉的部分）；第二阶段找出其中仍可见的漆料 R。D 即原始区域中漆料已脱落的比例。",
   sceneTitle:"整个场景",areaWeighted:"面积加权 D",paper:"论文：Recover-then-Measure（Measurement 期刊）。",code:"GitHub 代码",weights:"Zenodo 模型权重",
   bay:"车位",wear:"退化指数",coverage:"残留覆盖率 Q",footprint:"原始区域 |M|",residual:"残留 |R ∩ M|",rank:"手册等级",
   rgb:"RGB",grades:["I 级","II 级","III 级"],actions:["常规巡检","安排重涂","优先重涂"],bays:"标线数",loading:"加载中…"},
  ja:{name:"日本語",cat:{bay:"駐車枠線",number:"枠番号",arrow:"矢印",text:"文字標示",hatch:"ゼブラ（駐車禁止）",symbol:"車いすマーク",surface:"車いす用区画の着色舗装",crossing:"横断歩道",line:"区画線"},tag:"Blender 合成シーン",title:"復元してから測る",
-  subtitle:"駐車枠にカーソルを合わせると、区画線の元の範囲を復元し、残っている塗料を測定して、維持管理グレードを判定します。",
+  subtitle:"路面標示（枠線・番号・矢印・文字・ゼブラ・車いすマーク・横断歩道）にカーソルを合わせると、元の範囲を復元し、残っている塗料を測定して、維持管理グレードを判定します。",
   showAll:"すべて重ねて表示",gradeMap:"等級マップ",legM:"元の区画線範囲 M",legR:"残存塗料 R",
-  note:"Blender でレンダリングしたシーンで、実測画像は使用していません。M と R はシーンの形状と塗料マテリアルから得たもので、値は合成上の参照値であり、モデルの予測ではありません。値は駐車枠 1 区画の区画線全体で計算しています。",
-  selected:"選択中の駐車枠",hint:"駐車枠の上にカーソルを移動してください（タッチ操作ではタップ）。",howTitle:"D の算出方法",
+  note:"Blender でレンダリングしたシーンで、実測画像は使用していません。M と R はシーンの形状と塗料マテリアルから得たもので、値は合成上の参照値であり、モデルの予測ではありません。値は標示 1 つ分の全体で計算しており、青色の車いす用区画の着色舗装も標示として数えています。",
+  selected:"選択中の標示",hint:"路面標示の上にカーソルを移動してください（タッチ操作ではタップ）。",howTitle:"D の算出方法",
   how:"第1段階で摩耗で消えた部分を含む元の範囲 M を復元し、第2段階でその内側に残る塗料 R を抽出します。D は元の範囲のうち塗料が失われた割合（剥離率）です。",
   sceneTitle:"シーン全体",areaWeighted:"面積加重 D",paper:"論文：Recover-then-Measure（Measurement 誌）",code:"GitHub のコード",weights:"Zenodo のモデル重み",
   bay:"駐車枠",wear:"劣化指標",coverage:"残存被覆率 Q",footprint:"元の範囲 |M|",residual:"残存 |R ∩ M|",rank:"ハンドブック評価",
   rgb:"RGB",grades:["グレード I","グレード II","グレード III"],actions:["通常点検","再塗装を計画","優先して再塗装"],bays:"区画線の数",loading:"読み込み中…"},
  ko:{name:"한국어",cat:{bay:"주차 구획선",number:"구획 번호",arrow:"화살표",text:"문자 표시",hatch:"빗금 금지 구역",symbol:"휠체어 표시",surface:"장애인 주차구역 도색",crossing:"횡단보도",line:"차선"},tag:"Blender 합성 장면",title:"복원한 뒤 측정한다",
-  subtitle:"주차 구획 위에 마우스를 올리면 표시의 원래 영역을 복원하고, 남아 있는 도료를 측정해 유지관리 등급을 판정합니다.",
+  subtitle:"노면 표시(구획선·번호·화살표·문자·빗금·휠체어 표시·횡단보도) 위에 마우스를 올리면 원래 영역을 복원하고, 남아 있는 도료를 측정해 유지관리 등급을 판정합니다.",
   showAll:"모두 겹쳐 보기",gradeMap:"등급 지도",legM:"원래 표시 영역 M",legR:"잔존 도료 R",
-  note:"Blender로 렌더링한 장면이며 실제 촬영 영상은 사용하지 않았습니다. M과 R은 장면의 형상과 도료 재질에서 얻은 것으로, 값은 합성 참고값이며 모델 예측이 아닙니다. 값은 주차 구획 하나의 전체 윤곽선으로 계산합니다.",
-  selected:"선택한 구획",hint:"주차 구획 위로 마우스를 옮기세요(터치 화면에서는 탭).",howTitle:"D 계산 방법",
+  note:"Blender로 렌더링한 장면이며 실제 촬영 영상은 사용하지 않았습니다. M과 R은 장면의 형상과 도료 재질에서 얻은 것으로, 값은 합성 참고값이며 모델 예측이 아닙니다. 값은 표시 하나의 전체 영역으로 계산하며, 파란색 장애인 주차구역 도색도 하나의 표시로 셉니다.",
+  selected:"선택한 표시",hint:"노면 표시 위로 마우스를 옮기세요(터치 화면에서는 탭).",howTitle:"D 계산 방법",
   how:"1단계에서 마모로 사라진 부분까지 포함한 원래 영역 M을 복원하고, 2단계에서 그 안에 남은 도료 R을 찾습니다. D는 원래 영역 중 도료가 사라진 비율입니다.",
   sceneTitle:"전체 장면",areaWeighted:"면적 가중 D",paper:"논문: Recover-then-Measure (Measurement)",code:"GitHub 코드",weights:"Zenodo 모델 가중치",
   bay:"구획",wear:"열화 지수",coverage:"잔존 피복률 Q",footprint:"원래 영역 |M|",residual:"잔존 |R ∩ M|",rank:"핸드북 등급",
   rgb:"RGB",grades:["I 등급","II 등급","III 등급"],actions:["정기 점검","재도장 계획","우선 재도장"],bays:"표시 수",loading:"불러오는 중…"},
  de:{name:"Deutsch",cat:{bay:"Stellplatzlinie",number:"Stellplatznummer",arrow:"Pfeil",text:"Schriftzug",hatch:"Sperrfläche",symbol:"Rollstuhlsymbol",surface:"Behindertenparkplatz-Fläche",crossing:"Fußgängerüberweg",line:"Linie"},tag:"Synthetische Blender-Szene",title:"Erst rekonstruieren, dann messen",
-  subtitle:"Fahren Sie über einen Stellplatz: Die ursprüngliche Markierungsfläche wird rekonstruiert, die verbliebene Farbe gemessen und der Stellplatz für die Instandhaltung eingestuft.",
+  subtitle:"Fahren Sie über eine beliebige Markierung (Stellplatzlinie, Nummer, Pfeil, Schriftzug, Sperrfläche, Symbol, Überweg): Die ursprüngliche Fläche wird rekonstruiert, die verbliebene Farbe gemessen und die Markierung für die Instandhaltung eingestuft.",
   showAll:"Alle Überlagerungen",gradeMap:"Klassenkarte",legM:"Ursprüngliche Fläche M",legR:"Verbliebene Farbe R",
-  note:"In Blender gerendert; es werden keine Befliegungsbilder verwendet. M und R stammen aus Geometrie und Farbmaterial der Szene; die Werte sind synthetische Referenzwerte, keine Modellvorhersagen. Jeder Wert bezieht sich auf die vollständige Umrandung eines Stellplatzes.",
-  selected:"Ausgewählter Stellplatz",hint:"Bewegen Sie den Zeiger über einen Stellplatz (oder tippen Sie darauf).",howTitle:"So wird D gemessen",
+  note:"In Blender gerendert; es werden keine Befliegungsbilder verwendet. M und R stammen aus Geometrie und Farbmaterial der Szene; die Werte sind synthetische Referenzwerte, keine Modellvorhersagen. Jeder Wert bezieht sich auf eine vollständige Markierung; auch die blaue Fläche des Behindertenparkplatzes zählt als Markierung.",
+  selected:"Ausgewählte Markierung",hint:"Bewegen Sie den Zeiger über eine Markierung (oder tippen Sie darauf).",howTitle:"So wird D gemessen",
   how:"Stufe 1 rekonstruiert die ursprüngliche Fläche M einschließlich abgefahrener Abschnitte; Stufe 2 findet die darin noch sichtbare Farbe R. D ist der Anteil der Fläche, der seine Farbe verloren hat.",
   sceneTitle:"Gesamte Szene",areaWeighted:"flächengewichtetes D",paper:"Artikel: Recover-then-Measure (Measurement).",code:"Code auf GitHub",weights:"Modellgewichte auf Zenodo",
   bay:"Stellplatz",wear:"Degradationsindex",coverage:"Restdeckung Q",footprint:"Fläche |M|",residual:"Rest |R ∩ M|",rank:"Handbuch-Rang",
   rgb:"RGB",grades:["Klasse I","Klasse II","Klasse III"],actions:["Routinekontrolle","Neumarkierung einplanen","Vorrangig neu markieren"],bays:"Markierungen",loading:"Wird geladen…"},
  fr:{name:"Français",cat:{bay:"Ligne de place",number:"Numéro de place",arrow:"Flèche",text:"Inscription",hatch:"Zone hachurée",symbol:"Symbole fauteuil roulant",surface:"Surface de place PMR",crossing:"Passage piéton",line:"Ligne"},tag:"Scène de synthèse Blender",title:"Reconstituer, puis mesurer",
-  subtitle:"Survolez une place : l’emprise d’origine du marquage est reconstituée, la peinture restante est mesurée et la place reçoit une classe d’entretien.",
+  subtitle:"Survolez un marquage (ligne de place, numéro, flèche, inscription, hachures, symbole, passage piéton) : son emprise d’origine est reconstituée, la peinture restante est mesurée et le marquage reçoit une classe d’entretien.",
   showAll:"Tout superposer",gradeMap:"Carte des classes",legM:"Emprise d’origine M",legR:"Peinture résiduelle R",
-  note:"Rendu dans Blender : aucune image de relevé n’est utilisée. M et R proviennent de la géométrie et du matériau de peinture de la scène ; les valeurs sont des références de synthèse, pas des prédictions du modèle. Chaque valeur porte sur le contour complet d’une place.",
-  selected:"Place sélectionnée",hint:"Placez le pointeur sur une place (ou touchez-la).",howTitle:"Calcul de D",
+  note:"Rendu dans Blender : aucune image de relevé n’est utilisée. M et R proviennent de la géométrie et du matériau de peinture de la scène ; les valeurs sont des références de synthèse, pas des prédictions du modèle. Chaque valeur porte sur un marquage complet ; la surface bleue de la place PMR compte aussi comme marquage.",
+  selected:"Marquage sélectionné",hint:"Placez le pointeur sur un marquage (ou touchez-le).",howTitle:"Calcul de D",
   how:"L’étape 1 reconstitue l’emprise d’origine M, y compris les parties effacées ; l’étape 2 détecte la peinture R encore visible à l’intérieur. D est la part de l’emprise qui a perdu sa peinture.",
   sceneTitle:"Scène entière",areaWeighted:"D pondéré par la surface",paper:"Article : Recover-then-Measure (Measurement).",code:"Code sur GitHub",weights:"Poids du modèle sur Zenodo",
   bay:"Place",wear:"indice de dégradation",coverage:"Couverture résiduelle Q",footprint:"Emprise |M|",residual:"Résiduel |R ∩ M|",rank:"Rang (manuel)",

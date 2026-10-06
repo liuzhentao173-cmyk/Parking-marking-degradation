@@ -23,7 +23,7 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 
-演示场景是用 Blender 建模并渲染的停车场。掩膜和数值来自场景几何与漆料材质，属于合成参考值，并非模型预测；每个数值按一个完整车位轮廓计算。
+演示场景是用 Blender 建模并渲染的停车场。掩膜和数值来自场景几何与漆料材质，属于合成参考值，并非模型预测；场景中所有标线都计入（车位线、编号、箭头、文字、斜线区、轮椅标志、人行横道、停止线与车道线，以及蓝色无障碍车位涂装，共 132 个），每个数值按一个完整标线计算；R 按像素中心取值，不做抗锯齿。
 
 ## 流程
 

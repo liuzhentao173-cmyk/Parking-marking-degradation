@@ -19,11 +19,11 @@ Zhentao Liu, Jiaming Liu, Zhengtao Xie, Kai Xue, Shan Gu, Ji Dang
 
 À partir d’une seule orthophoto de parking prise par drone, ce code produit pour chaque zone un **indice de dégradation D**, une **carte thermique spatiale** et une **classe d’entretien** accompagnée de son **incertitude de mesure**. Il procède en deux étapes : il *reconstitue* d’abord l’emprise d’origine de chaque marquage, y compris les parties dont la peinture a disparu, puis il *mesure* la peinture qui subsiste à l’intérieur de cette emprise.
 
-> **[▶ Ouvrir la démo interactive](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=fr)** : survolez une place pour afficher son emprise d’origine *M*, sa peinture résiduelle *R*, l’indice *D* et la classe d’entretien.
+> **[▶ Ouvrir la démo interactive](https://liuzhentao173-cmyk.github.io/Quantitative-assessment-of-parking-lot-pavement-marking-degradation/?lang=fr)** : survolez un marquage pour afficher son emprise d’origine *M*, sa peinture résiduelle *R*, l’indice *D* et la classe d’entretien.
 
 <img src="docs/assets/RGB_M_R_preview.jpg" alt="RGB, M and R of the Blender scene">
 
-La scène de démonstration est un parking modélisé et rendu dans Blender. Les masques et les valeurs proviennent de la géométrie et du matériau de peinture de la scène : ce sont des références de synthèse, pas des prédictions du modèle. Chaque valeur porte sur le contour complet d’une place.
+La scène de démonstration est un parking modélisé et rendu dans Blender. Les masques et les valeurs proviennent de la géométrie et du matériau de peinture de la scène : ce sont des références de synthèse, pas des prédictions du modèle. Tous les marquages de la scène comptent (lignes de place, numéros, flèches, inscriptions, hachures, symboles, passage piéton, lignes d’arrêt et de voie, et la surface bleue de la place PMR, soit 132 au total) ; chaque valeur porte sur un marquage complet. R est relevé au centre des pixels, sans anticrénelage.
 
 ## Chaîne de traitement
 
